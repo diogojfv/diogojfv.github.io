@@ -1,9 +1,10 @@
 title: Diogo Fróis Vieira Homepage
 author: Diogo Fróis Vieira
 url: https://www.abhinavsaxena.com/moonwalk # root address of the site
-description: > # description of the site (multiple lines allowed)
-  ![theme logo](https://raw.githubusercontent.com/diogojfv/diogojfv.github.io/master/me.jpeg)
-  
+description: # description of the site (multiple lines allowed)
+
+  image:
+    url: "https://raw.githubusercontent.com/diogojfv/diogojfv.github.io/master/me.jpeg"
   
   I graduated (BSc and MSc) in Biomedical Engineering from Instituto Superior Técnico (IST), with specialization in imaging, biosignals and biomedical instrumentation. I was awarded two research grants from FCT to further explore my Master's Thesis work at Institute for Systems and Robotics (ISR-Lisboa) on cytoskeletons and nuclei in cancer cells. <br>
   
