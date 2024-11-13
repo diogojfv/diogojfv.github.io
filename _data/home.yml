@@ -1,12 +1,12 @@
 navbar_entries:
   - title: projects
-    url: projects
+    url: about
 
   - title: work
-    url: work
+    url: projects
 
   - title: contact
-    url: contact
+    url: blog
 
 project_entries:
   - title: Project 1
