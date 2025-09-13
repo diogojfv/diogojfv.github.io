@@ -1,4 +1,4 @@
-/* load Congenial Ultra Light (local file) */
+/* load Congenial Ultra Light from /fonts */
 @font-face {
   font-family: 'Congenial UltraLight';
   src: url('fonts/congenial-ultra-light.otf') format('opentype');
@@ -13,11 +13,14 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: 'Congenial UltraLight', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 200; /* ultra light */
+  font-weight: 200;                 /* ensure ultra light is used */
   color: #111; background: #fafafa; line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* make headings not bold so you can see the change */
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }  /* adjust if too light */
 
 /* grid: left sidebar + main content */
 .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
@@ -27,7 +30,7 @@ body {
   position: relative;
   background: #fff;
   border-right: 1px solid #f0f0f0;
-  padding: 24px 28px;      /* space inside the left column */
+  padding: 24px 28px;
 }
 
 /* inner hairline near the right edge */
@@ -42,33 +45,33 @@ body {
 }
 
 /* nav */
-.side-nav { display: flex; flex-direction: column; gap: 14px; padding-right: 12px; } /* was 18px */
+.side-nav { display: flex; flex-direction: column; gap: 14px; padding-right: 12px; }
 .side-nav .brand {
-  font-weight: 200; text-decoration: none; color: #d9822b;
+  font-weight: 300; text-decoration: none; color: #d9822b;
   padding: 6px 8px; border-radius: 8px; background: transparent;
 }
 
 .side-nav ul {
   list-style: none;
-  margin: 200px 0 0;        /* move links down (your current value) */
+  margin: 300px 0 0;
   padding: 0;
   display: flex; flex-direction: column; gap: 10px;
-  align-self: flex-end;     /* align the whole block to the right */
-  text-align: right;        /* right-align link text */
+  align-self: flex-end;
+  text-align: right;
 }
 
 .side-nav a {
   color: #6b6b6b; text-decoration: none; text-transform: lowercase;
   padding: 6px 8px; border-radius: 8px; background: transparent;
-  display: block;           /* clean right alignment + larger hover area */
+  display: block;
 }
 .side-nav a:hover { background: #f4f4f4; }
 .side-nav a.active { color: #d9822b; background: transparent; }
 
-/* main content (pulled left a bit) */
+/* main content */
 .content {
   max-width: 1000px;
-  margin: 48px auto 48px 32px;   /* left margin smaller -> closer to sidebar */
+  margin: 48px auto 48px 32px;
   padding: 0 24px 0 0;
 }
 
