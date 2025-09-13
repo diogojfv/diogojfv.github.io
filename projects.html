@@ -4,28 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects — diogojfv</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <div class="layout">
     <aside class="side">
-      <nav class="side-nav">
-        <a class="brand" href="about.html">diogojfv</a>
-        <ul>
-          <li><a href="about.html">about</a></li>
-          <li><a href="work.html">work</a></li>
-          <li><a href="projects.html">projects</a></li>
-        </ul>
-      </nav>
+      <div class="side-card">
+        <nav class="side-nav">
+          <a class="brand" href="about.html">diogojfv</a>
+          <ul>
+            <li><a href="about.html">about</a></li>
+            <li><a href="work.html">work</a></li>
+            <li><a href="projects.html">projects</a></li>
+          </ul>
+        </nav>
+      </div>
     </aside>
 
-    <main class="content container">
-      <h1>About</h1>
-      <p class="muted">Blank page for now.</p>
+    <main class="content">
+      <h1>Projects</h1>
+      <p class="muted">Blank page.</p>
     </main>
   </div>
 
-  <!-- auto-mark the active link based on current page -->
   <script>
     const page = (location.pathname.split('/').pop() || 'about.html').toLowerCase();
     document.querySelectorAll('.side-nav a[href]').forEach(a=>{
