@@ -30,7 +30,7 @@ body {
 }
 
 /* nav */
-.side-nav { display: flex; flex-direction: column; gap: 14px; padding-right: 18px; }
+.side-nav { display: flex; flex-direction: column; gap: 14px; padding-right: 12px; } /* was 18px */
 .side-nav .brand {
   font-weight: 700; text-decoration: none; color: #d9822b;
   padding: 6px 8px; border-radius: 8px; background: transparent;
@@ -38,14 +38,17 @@ body {
 
 .side-nav ul {
   list-style: none;
-  margin: 18px 0 0;        /* move links a bit down */
+  margin: 40px 0 0;        /* was 18px: move links down */
   padding: 0;
   display: flex; flex-direction: column; gap: 10px;
+  align-self: flex-end;     /* align the whole block to the right */
+  text-align: right;        /* right-align link text */
 }
 
 .side-nav a {
   color: #6b6b6b; text-decoration: none; text-transform: lowercase;
   padding: 6px 8px; border-radius: 8px; background: transparent;
+  display: block;           /* clean right alignment + larger hover area */
 }
 .side-nav a:hover { background: #f4f4f4; }
 .side-nav a.active { color: #d9822b; background: transparent; }
@@ -66,6 +69,6 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   .side { border-right: none; border-bottom: 1px solid #eee; padding: 12px 16px; }
   .side::after { display: none; }
   .side-nav { flex-direction: row; align-items: center; gap: 12px; padding-right: 0; }
-  .side-nav ul { flex-direction: row; margin: 0 0 0 auto; gap: 8px; }
+  .side-nav ul { flex-direction: row; margin: 0 0 0 auto; gap: 8px; align-self: auto; text-align: left; }
   .content { margin: 24px 16px; padding: 0; }
 }
