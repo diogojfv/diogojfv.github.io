@@ -7,26 +7,30 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="about.html">diogojfv</a>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a class="active" href="projects.html">Projects</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="layout">
+    <aside class="side">
+      <nav class="side-nav">
+        <a class="brand" href="about.html">diogojfv</a>
+        <ul>
+          <li><a href="about.html">about</a></li>
+          <li><a href="work.html">work</a></li>
+          <li><a href="projects.html">projects</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-  <main class="container">
-    <h1>Projects</h1>
-    <p class="muted">Blank page. Add cards, links, images, etc.</p>
-  </main>
+    <main class="content container">
+      <h1>About</h1>
+      <p class="muted">Blank page for now.</p>
+    </main>
+  </div>
 
-  <footer class="site-footer">
-    <small>© <span id="y"></span> diogojfv</small>
-  </footer>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <!-- auto-mark the active link based on current page -->
+  <script>
+    const page = (location.pathname.split('/').pop() || 'about.html').toLowerCase();
+    document.querySelectorAll('.side-nav a[href]').forEach(a=>{
+      if(a.getAttribute('href').toLowerCase() === page) a.classList.add('active');
+    });
+  </script>
 </body>
 </html>
