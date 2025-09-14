@@ -137,7 +137,7 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 :root{
   --cat-academic:   #1b6ed6; /* blue */
   --cat-conference: #00a383; /* teal */
-  --cat-journal:    #c9b400; /* yellow */
+  --cat-journal:    #9A0000; /* red */
 }
 
 /* sticky filter bar */
