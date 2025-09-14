@@ -1,4 +1,4 @@
-/* load Congenial Ultra Light from /fonts */
+/* === Font: Congenial Ultra Light from /fonts === */
 @font-face {
   font-family: 'Congenial UltraLight';
   src: url('fonts/congenial-ultra-light.otf') format('opentype');
@@ -7,20 +7,36 @@
   font-display: swap;
 }
 
+/* === Theme tokens === */
+:root{
+  --accent: #d9822b;           /* single accent used for nav-active + links */
+  --text:   #111;
+  --muted:  #666;
+  --bg:     #fafafa;
+  --hair:   #dcdcdc;
+  --rule:   #f0f0f0;
+}
+
 /* reset */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
   margin: 0;
   font-family: 'Congenial UltraLight', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 200;                 /* ensure ultra light is used */
-  color: #111; background: #fafafa; line-height: 1.5;
+  font-weight: 200;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* make headings not bold so you can see the change */
-h1, h2, h3, h4, h5, h6 { font-weight: 300; }  /* adjust if too light */
+/* links share the same accent everywhere */
+a { color: var(--accent); }
+a:hover { opacity: 0.9; }
+
+/* headings – keep light so font change is obvious */
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 
 /* grid: left sidebar + main content */
 .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
@@ -29,7 +45,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }  /* adjust if too light */
 .side {
   position: relative;
   background: #fff;
-  border-right: 1px solid #f0f0f0;
+  border-right: 1px solid var(--rule);
   padding: 24px 28px;
 }
 
@@ -40,20 +56,21 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }  /* adjust if too light */
   top: 24px; bottom: 24px;
   right: 10px;
   width: 1px;
-  background: #dcdcdc;
+  background: var(--hair);
   border-radius: 1px;
 }
 
 /* nav */
 .side-nav { display: flex; flex-direction: column; gap: 14px; padding-right: 12px; }
 .side-nav .brand {
-  font-weight: 300; text-decoration: none; color: #d9822b;
+  /* you currently keep it empty – fine; style remains in case you restore text */
+  font-weight: 300; text-decoration: none; color: var(--accent);
   padding: 6px 8px; border-radius: 8px; background: transparent;
 }
 
 .side-nav ul {
   list-style: none;
-  margin: 300px 0 0;
+  margin: 200px 0 0;              /* your current vertical position */
   padding: 0;
   display: flex; flex-direction: column; gap: 10px;
   align-self: flex-end;
@@ -61,22 +78,44 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }  /* adjust if too light */
 }
 
 .side-nav a {
-  color: #6b6b6b; text-decoration: none; text-transform: lowercase;
-  padding: 6px 8px; border-radius: 8px; background: transparent;
+  color: #6b6b6b;                 /* inactive items muted */
+  text-decoration: none;
+  text-transform: lowercase;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: transparent;
   display: block;
 }
 .side-nav a:hover { background: #f4f4f4; }
-.side-nav a.active { color: #d9822b; background: transparent; }
+.side-nav a.active { color: var(--accent); background: transparent; }
 
 /* main content */
 .content {
+  position: relative;             /* so the profile image can be absolutely placed */
   max-width: 1000px;
   margin: 48px auto 48px 32px;
   padding: 0 24px 0 0;
 }
 
 h1 { font-size: 44px; margin: 0 0 8px; }
-.muted { color: #666; }
+.muted { color: var(--muted); }
+
+/* profile image (square), placed like in your mock */
+.profile-pic{
+  position: absolute;
+  left: 0;                        /* adjust these two numbers to fine-tune placement */
+  top: 84px;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+/* text wrapper pushes content to the right of the photo */
+.content-inner{
+  margin-left: 260px;             /* 220 img + 40 gutter */
+}
 
 /* small screens: collapse */
 @media (max-width: 720px) {
@@ -85,5 +124,8 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   .side::after { display: none; }
   .side-nav { flex-direction: row; align-items: center; gap: 12px; padding-right: 0; }
   .side-nav ul { flex-direction: row; margin: 0 0 0 auto; gap: 8px; align-self: auto; text-align: left; }
+
   .content { margin: 24px 16px; padding: 0; }
+  .profile-pic { position: static; width: 140px; height: 140px; margin-bottom: 12px; }
+  .content-inner { margin-left: 0; }
 }
