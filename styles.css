@@ -104,7 +104,7 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .profile-pic{
   position: absolute;
   left: 0;                        /* adjust these two numbers to fine-tune placement */
-  top: 140px;
+  top: 160px;
   width: 220px;
   height: 220px;
   object-fit: cover;
@@ -129,3 +129,23 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   .profile-pic { position: static; width: 140px; height: 140px; margin-bottom: 12px; }
   .content-inner { margin-left: 0; }
 }
+
+
+/* nicer paragraph spacing + a lead paragraph style */
+.content-inner p { margin: 0 0 14px; color: var(--text); }
+.content-inner .lead { margin-bottom: 16px; }
+
+/* keep muted class available for lighter text if you want it */
+.muted { color: var(--muted); }
+
+/* Custom institutional link colors */
+.link-ist { color: #009FE4; }   /* IST blue */
+.link-dtu { color: #9A0000; }   /* DTU red */
+.link-isr { color: #AA261A; }   /* ISR red */
+.link-jhu { color: #092C72; }   /* JHU blue */
+
+/* optional hover tweak */
+.link-ist:hover,
+.link-dtu:hover,
+.link-isr:hover,
+.link-jhu:hover { opacity: 0.85; }
