@@ -12,7 +12,7 @@
   --accent: #d9822b;           /* single accent used for nav-active + links */
   --text:   #111;
   --muted:  #666;
-  --bg:     #fafafa;
+  --bg:     #ffffff;
   --hair:   #dcdcdc;
   --rule:   #f0f0f0;
 }
@@ -104,7 +104,7 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .profile-pic{
   position: absolute;
   left: 0;                        /* adjust these two numbers to fine-tune placement */
-  top: 160px;
+  top: 170px;
   width: 220px;
   height: 220px;
   object-fit: cover;
@@ -114,6 +114,7 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 
 /* text wrapper pushes content to the right of the photo */
 .content-inner{
+  margin-top: 24px;
   margin-left: 260px;             /* 220 img + 40 gutter */
 }
 
