@@ -172,14 +172,8 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 
 
 /* =============================================================== */
+/* ========================= Work / Timeline ===================== */
 /* =============================================================== */
-/* =============================================================== */
-/* =============================================================== */
-
-
-
-
-/* ===== Timeline / Work ===== */
 
 /* category colors */
 :root{
@@ -217,9 +211,13 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .chip[data-cat="poster"]  { --chip-color: var(--cat-poster); }
 .chip[data-cat="journal"] { --chip-color: var(--cat-journal); }
 
-/* timeline spine */
+/* timeline spine (parametric, so dots stay centered) */
 .timeline{
-  list-style: none; margin: 1rem 0 4rem 1.5rem; padding-left: 1.5rem;
+  --gutter: 1.5rem;   /* distance from item content to the spine */
+  --dot: .9rem;       /* dot diameter */
+  list-style: none;
+  margin: 1rem 0 4rem var(--gutter);
+  padding-left: var(--gutter);
   position: relative;
 }
 .timeline::before{
@@ -229,19 +227,20 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 /* each entry */
 .tl-item{ position: relative; margin: 1.25rem 0 2rem; }
 .tl-item::before{
-  content:""; position: absolute; left: -0.55rem; top: 1.25rem;
-  width: .9rem; height: .9rem; border-radius: 50%;
+  content:"";
+  position: absolute;
+  top: 1.25rem;
+  left: calc(-1 * var(--gutter) - var(--dot)/2); /* perfectly centered on spine */
+  width: var(--dot); height: var(--dot); border-radius: 50%;
   background: var(--bg);
-  box-shadow: 0 0 0 2px var(--hair);
+  box-shadow: 0 0 0 2px var(--hair), inset 0 0 0 2px var(--cat);
 }
 
-/* color by category (dot + card border) */
+/* color by category (sets --cat for the dot + card border) */
 .tl-item[data-cat~="academic"]{ --cat: var(--cat-academic); }
 .tl-item[data-cat~="oral"]    { --cat: var(--cat-oral); }
 .tl-item[data-cat~="poster"]  { --cat: var(--cat-poster); }
 .tl-item[data-cat~="journal"] { --cat: var(--cat-journal); }
-
-.tl-item::before{ box-shadow: 0 0 0 2px var(--hair), inset 0 0 0 2px var(--cat); }
 
 .tl-card{
   background: var(--bg);
