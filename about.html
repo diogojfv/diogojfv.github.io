@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>about</title>
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <div class="layout">
@@ -20,11 +20,31 @@
     </aside>
 
     <main class="content">
-      <img class="profile-pic" src="images/me.jpeg" alt="portrait" />
+      <!-- Portrait + social logos (positioned as one block) -->
+      <div class="profile-block">
+        <img class="profile-pic" src="images/me.jpeg" alt="portrait" />
+
+        <div class="socials">
+          <a href="mailto:diogofrois@gmail.com" class="soc" aria-label="Email">
+            <img src="logos/email.png" alt="Email">
+          </a>
+          <a href="https://scholar.google.com/citations?user=nupm4CwAAAAJ&hl=en" class="soc" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <img src="logos/scholar.png" alt="Google Scholar">
+          </a>
+          <a href="https://github.com/diogojfv" class="soc" target="_blank" rel="noopener" aria-label="GitHub">
+            <img src="logos/github.png" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/diogovieira16/" class="soc" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="logos/linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.last.fm/user/dunwich16" class="soc" target="_blank" rel="noopener" aria-label="Last.fm">
+            <img src="logos/lastfm.png" alt="Last.fm">
+          </a>
+        </div>
+      </div>
 
       <div class="content-inner">
         <p class="lead"><strong>A living showcase of biomedical engineering.</strong></p>
-        <p></p>
         <p>In high school, I dreamt of becoming a medical doctor, saving lives, and making a difference in a hospital setting. Life had other plans.</p>
 
         <p>I graduated (BSc &amp; MSc) in Biomedical Engineering from

@@ -63,20 +63,17 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 /* nav */
 .side-nav { display: flex; flex-direction: column; gap: 14px; padding-right: 12px; }
 .side-nav .brand {
-  /* you currently keep it empty – fine; style remains in case you restore text */
   font-weight: 300; text-decoration: none; color: var(--accent);
   padding: 6px 8px; border-radius: 8px; background: transparent;
 }
-
 .side-nav ul {
   list-style: none;
-  margin: 210px 0 0;              /* your current vertical position */
+  margin: 210px 0 0;              /* vertical position of the nav block */
   padding: 0;
   display: flex; flex-direction: column; gap: 10px;
   align-self: flex-end;
   text-align: right;
 }
-
 .side-nav a {
   color: #6b6b6b;                 /* inactive items muted */
   text-decoration: none;
@@ -91,7 +88,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 
 /* main content */
 .content {
-  position: relative;             /* so the profile image can be absolutely placed */
+  position: relative;             /* positions the profile block absolutely */
   max-width: 1000px;
   margin: 48px auto 48px 32px;
   padding: 0 24px 0 0;
@@ -100,37 +97,43 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 h1 { font-size: 44px; margin: 0 0 8px; }
 .muted { color: var(--muted); }
 
-/* profile image (square), placed like in your mock */
-.profile-pic{
+/* ===== Profile block (photo + logos) ===== */
+.profile-block{
   position: absolute;
-  left: 0;                        /* adjust these two numbers to fine-tune placement */
-  top: 170px;
-  width: 220px;
+  left: 0;
+  top: 170px;          /* move BOTH image and logos together */
+  width: 220px;        /* photo width */
+}
+
+/* portrait fills the block width */
+.profile-pic{
+  display: block;
+  width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 0px;
+  border-radius: 0;
   border: 1px solid #e5e5e5;
+}
+
+/* socials row exactly as wide as the photo */
+.socials{
+  margin-top: 14px;               /* gap under photo */
+  display: flex;
+  justify-content: space-between; /* spread from left edge to right edge */
+  align-items: center;
+  gap: 8px;
+}
+.socials .soc img{
+  width: 44px;                    /* icon size */
+  height: 44px;
+  display: block;
 }
 
 /* text wrapper pushes content to the right of the photo */
 .content-inner{
   margin-top: 24px;
-  margin-left: 260px;             /* 220 img + 40 gutter */
+  margin-left: 260px;             /* 220 image + ~40 gutter */
 }
-
-/* small screens: collapse */
-@media (max-width: 720px) {
-  .layout { grid-template-columns: 1fr; }
-  .side { border-right: none; border-bottom: 1px solid #eee; padding: 12px 16px; }
-  .side::after { display: none; }
-  .side-nav { flex-direction: row; align-items: center; gap: 12px; padding-right: 0; }
-  .side-nav ul { flex-direction: row; margin: 0 0 0 auto; gap: 8px; align-self: auto; text-align: left; }
-
-  .content { margin: 24px 16px; padding: 0; }
-  .profile-pic { position: static; width: 140px; height: 140px; margin-bottom: 12px; }
-  .content-inner { margin-left: 0; }
-}
-
 
 /* nicer paragraph spacing + a lead paragraph style */
 .content-inner p { margin: 0 0 14px; color: var(--text); }
@@ -144,9 +147,23 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .link-dtu { color: #9A0000; }   /* DTU red */
 .link-isr { color: #AA261A; }   /* ISR red */
 .link-jhu { color: #092C72; }   /* JHU blue */
-
-/* optional hover tweak */
 .link-ist:hover,
 .link-dtu:hover,
 .link-isr:hover,
 .link-jhu:hover { opacity: 0.85; }
+
+/* small screens: collapse */
+@media (max-width: 720px) {
+  .layout { grid-template-columns: 1fr; }
+  .side { border-right: none; border-bottom: 1px solid #eee; padding: 12px 16px; }
+  .side::after { display: none; }
+  .side-nav { flex-direction: row; align-items: center; gap: 12px; padding-right: 0; }
+  .side-nav ul { flex-direction: row; margin: 0 0 0 auto; gap: 8px; align-self: auto; text-align: left; }
+
+  .content { margin: 24px 16px; padding: 0; }
+  .profile-block{ position: static; width: 140px; }
+  .profile-pic{ height: 140px; }
+  .socials{ width: 140px; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
+  .socials .soc img{ width: 32px; height: 32px; }
+  .content-inner { margin-left: 0; }
+}
