@@ -101,7 +101,7 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .profile-block{
   position: absolute;
   left: 0;
-  top: 170px;          /* move BOTH image and logos together */
+  top: 165px;          /* move BOTH image and logos together */
   width: 220px;        /* photo width */
 }
 
@@ -124,8 +124,8 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   gap: 8px;
 }
 .socials .soc img{
-  width: 44px;                    /* icon size */
-  height: 44px;
+  width: 42px;                    /* icon size */
+  height: 42px;
   display: block;
 }
 
