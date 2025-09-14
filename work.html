@@ -27,16 +27,16 @@
       <header class="work-toolbar">
         <span class="muted">Filter:</span>
         <div class="chips" role="group" aria-label="Filters">
-          <button type="button" class="chip is-on" data-cat="academic">Academic projects (at IST and DTU)</button>
-          <button type="button" class="chip is-on" data-cat="oral">Oral communications</button>
-          <button type="button" class="chip is-on" data-cat="poster">Poster / Graphical Abstract communications</button>
+          <button type="button" class="chip is-on" data-cat="academic">Academic projects</button>
+          <button type="button" class="chip is-on" data-cat="conference">Conferences</button>
           <button type="button" class="chip is-on" data-cat="journal">Journal papers</button>
         </div>
       </header>
 
       <!-- Timeline -->
       <ol class="timeline" id="timeline">
-        <!-- Journal -->
+
+        <!-- ===================== JOURNAL PAPERS ===================== -->
         <li class="tl-item" data-cat="journal">
           <article class="tl-card">
             <h3>
@@ -49,7 +49,6 @@
           </article>
         </li>
 
-        <!-- Journal -->
         <li class="tl-item" data-cat="journal">
           <article class="tl-card">
             <h3>
@@ -62,40 +61,66 @@
           </article>
         </li>
 
-        <!-- Oral (Conference) -->
-        <li class="tl-item" data-cat="oral academic">
+        <!-- ===================== CONFERENCES ===================== -->
+        <li class="tl-item" data-cat="conference">
           <article class="tl-card">
             <h3>A computational approach for cytoskeletal organization characterization</h3>
+            <p class="venue">
+              <span class="label">Contribution:</span>
+              <a href="#" class="soon" title="PDF coming soon" onclick="return false;">oral communication</a>
+            </p>
             <p class="venue"><span class="label">Conference:</span> SPAOM 2023 Congress (Faro, Portugal)</p>
           </article>
         </li>
 
-        <!-- Poster (Conference) -->
-        <li class="tl-item" data-cat="poster academic">
+        <li class="tl-item" data-cat="conference">
           <article class="tl-card">
             <h3>
               <a href="https://www.eacr.org/congress" target="_blank" rel="noopener">
                 Unravelling new strategies for early detection of invasive cancer cells: a focus on the nuclear architecture dynamics
               </a>
             </h3>
+            <p class="venue">
+              <span class="label">Contribution:</span>
+              <a href="#" class="soon" title="PDF coming soon" onclick="return false;">poster</a>
+            </p>
             <p class="venue"><span class="label">Conference:</span> EACR 2022 Congress (Seville, Spain)</p>
           </article>
         </li>
 
-        <!-- Thesis (Academic) -->
-        <li class="tl-item" data-cat="academic">
+        <li class="tl-item" data-cat="conference">
           <article class="tl-card">
             <h3>
-              <a href="https://fenix.tecnico.ulisboa.pt/downloadFile/1126295043840781/THESIS.pdf" target="_blank" rel="noopener">
-                Unraveling the cytoskeletal architecture of cancer cells: development of a novel computational approach (MSc thesis)
+              <a href="https://doi.org/10.1158/1538-7445.AM2023-3348" target="_blank" rel="noopener">
+                Unraveling new strategies for early detection of invasive cancer cells: a special focus on the nuclear and cytoskeletal architecture
               </a>
             </h3>
-            <p class="venue"><span class="label">MSc Thesis:</span> Instituto Superior Técnico</p>
+            <p class="venue">
+              <span class="label">Contribution:</span>
+              <a href="#" class="soon" title="PDF coming soon" onclick="return false;">poster</a>
+              <span class="sep">·</span>
+              <a href="https://doi.org/10.1158/1538-7445.AM2023-3348" target="_blank" rel="noopener">abstract</a>
+            </p>
+            <p class="venue"><span class="label">Conference:</span> AACR 2023 (Orlando, USA)</p>
           </article>
         </li>
 
-        <!-- ===================== EDUCATION PROJECTS (MSc) ===================== -->
+        <li class="tl-item" data-cat="conference">
+          <article class="tl-card">
+            <h3>
+              <a href="https://doi.org/10.1111/aos.17143" target="_blank" rel="noopener">
+                Prognostic impact and correlation with disease activity of three-dimensional OCT biomarkers in Vogt-Koyanagi-Harada patients
+              </a>
+            </h3>
+            <p class="venue">
+              <span class="label">Contribution:</span>
+              <a href="https://doi.org/10.1111/aos.17143" target="_blank" rel="noopener">abstract</a>
+            </p>
+            <p class="venue"><span class="label">Conference:</span> EVER 2024 (Valencia, Spain)</p>
+          </article>
+        </li>
 
+        <!-- ===================== ACADEMIC PROJECTS ===================== -->
         <li class="tl-item" data-cat="academic">
           <article class="tl-card">
             <h3>CardioBrain: Link between ECG/PPG and EEG</h3>
@@ -123,10 +148,23 @@
         <li class="tl-item" data-cat="academic">
           <article class="tl-card">
             <h3>Cancer risk prediction with Bayesian networks</h3>
-            <p>Developed a Bayesian Network from scratch to predict cancer risk based on biomedical data such as cholesterol and blood pressure. The system includes training and inference modules, providing probabilistic predictions from structured datasets.</p>
+            <p>Developed a Bayesian network from scratch to predict cancer risk based on biomedical data such as cholesterol and blood pressure. The system includes training and inference modules, providing probabilistic predictions from structured datasets.</p>
             <p class="venue"><span class="label">Course (IST):</span> Algorithms and Computational Modelation</p>
           </article>
         </li>
+
+        <!-- MSc Thesis (keep under academic, or move to Journal if preferred) -->
+        <li class="tl-item" data-cat="academic">
+          <article class="tl-card">
+            <h3>
+              <a href="https://fenix.tecnico.ulisboa.pt/downloadFile/1126295043840781/THESIS.pdf" target="_blank" rel="noopener">
+                Unraveling the cytoskeletal architecture of cancer cells: development of a novel computational approach (MSc thesis)
+              </a>
+            </h3>
+            <p class="venue"><span class="label">MSc Thesis:</span> Instituto Superior Técnico</p>
+          </article>
+        </li>
+
       </ol>
     </main>
   </div>
@@ -138,13 +176,12 @@
       if (a.getAttribute('href').toLowerCase() === page) a.classList.add('active');
     });
 
-    // Timeline filter logic
-    const selected = new Set(['academic','oral','poster','journal']);
+    // Timeline filter logic — three categories
+    const selected = new Set(['academic','conference','journal']);
     const chips = document.querySelectorAll('.chip');
     const items = [...document.querySelectorAll('.tl-item')];
 
     function applyFilter() {
-      // If nothing selected, show all
       const showAll = selected.size === 0;
       items.forEach(it => {
         const cats = (it.dataset.cat || '').split(/\s+/);
