@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 /* sidebar (no box) */
 .side {
   position: relative;
-  background: #fff;
+  background: #ffffff;
   border-right: 1px solid var(--rule);
   padding: 24px 28px;
 }
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 300; }
   top: 24px; bottom: 24px;
   right: 10px;
   width: 1px;
-  background: var(--hair);
+  background: #ffffff;
   border-radius: 1px;
 }
 
