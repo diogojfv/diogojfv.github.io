@@ -168,3 +168,95 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   .socials .soc img{ width: 32px; height: 32px; }
   .content-inner { margin-left: 0; }
 }
+
+
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+
+
+
+
+/* ===== Timeline / Work ===== */
+
+/* category colors */
+:root{
+  --cat-academic: #1b6ed6;  /* blue */
+  --cat-oral:     #00a383;  /* teal */
+  --cat-poster:   #49b22f;  /* green */
+  --cat-journal:  #c9b400;  /* yellow */
+}
+
+/* sticky filter bar */
+.work-toolbar{
+  position: sticky; top: 0; z-index: 5;
+  background: var(--bg);
+  padding: .6rem 0 .75rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; gap: .6rem 0.5rem; align-items: center;
+}
+.chips{ display:flex; flex-wrap:wrap; gap:.4rem; }
+.chip{
+  --chip-color: var(--hair);
+  border: 1px solid var(--chip-color);
+  background: var(--bg);
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  font: inherit; line-height: 1.2;
+  cursor: pointer;
+  user-select: none;
+}
+.chip:is(:hover,:focus-visible){ box-shadow: 0 0 0 2px color-mix(in srgb, var(--chip-color) 30%, transparent); outline: none; }
+.chip.is-on{ color: var(--text); background: color-mix(in srgb, var(--chip-color) 12%, var(--bg)); border-color: var(--chip-color); }
+
+/* tint chips by category */
+.chip[data-cat="academic"]{ --chip-color: var(--cat-academic); }
+.chip[data-cat="oral"]    { --chip-color: var(--cat-oral); }
+.chip[data-cat="poster"]  { --chip-color: var(--cat-poster); }
+.chip[data-cat="journal"] { --chip-color: var(--cat-journal); }
+
+/* timeline spine */
+.timeline{
+  list-style: none; margin: 1rem 0 4rem 1.5rem; padding-left: 1.5rem;
+  position: relative;
+}
+.timeline::before{
+  content:""; position:absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--hair);
+}
+
+/* each entry */
+.tl-item{ position: relative; margin: 1.25rem 0 2rem; }
+.tl-item::before{
+  content:""; position: absolute; left: -0.55rem; top: 1.25rem;
+  width: .9rem; height: .9rem; border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0 0 0 2px var(--hair);
+}
+
+/* color by category (dot + card border) */
+.tl-item[data-cat~="academic"]{ --cat: var(--cat-academic); }
+.tl-item[data-cat~="oral"]    { --cat: var(--cat-oral); }
+.tl-item[data-cat~="poster"]  { --cat: var(--cat-poster); }
+.tl-item[data-cat~="journal"] { --cat: var(--cat-journal); }
+
+.tl-item::before{ box-shadow: 0 0 0 2px var(--hair), inset 0 0 0 2px var(--cat); }
+
+.tl-card{
+  background: var(--bg);
+  border: 2px solid var(--rule);
+  border-left: 6px solid var(--cat, var(--accent));
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+}
+.tl-card h3{ margin: 0 0 .35rem; font-size: 1.05rem; font-weight: 600; }
+.tl-card .authors, .tl-card .venue{ margin: .25rem 0; color: var(--muted); font-size: .92rem; }
+.tl-card .label{ font-weight: 600; color: var(--text); }
+
+/* hide filtered items cleanly */
+.tl-item[hidden]{ display:none !important; }
+
+/* Optional: nicer long-page scrolling */
+html{ scroll-behavior: smooth; }

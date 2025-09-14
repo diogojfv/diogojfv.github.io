@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogo fróis vieira - work</title>
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
@@ -21,16 +21,90 @@
     </aside>
 
     <main class="content">
-      <h1>Work</h1>
-      <p class="muted">Work in progress.</p>
+      <h1></h1> <!-- Tirei o Work daqui, nao é preciso -->
+
+      <!-- Sticky filter bar -->
+      <header class="work-toolbar">
+        <span class="muted">Filter:</span>
+        <div class="chips" role="group" aria-label="Filters">
+          <button type="button" class="chip is-on" data-cat="academic">Academic projects (at IST and DTU)</button>
+          <button type="button" class="chip is-on" data-cat="oral">Oral communications</button>
+          <button type="button" class="chip is-on" data-cat="poster">Poster / Graphical Abstract communications</button>
+          <button type="button" class="chip is-on" data-cat="journal">Journal papers</button>
+        </div>
+      </header>
+
+      <!-- Timeline -->
+      <ol class="timeline" id="timeline">
+        <!-- ITEM -->
+        <li class="tl-item" data-cat="journal">
+          <article class="tl-card">
+            <h3>A novel computational approach to dissect the cytoskeletal architecture of cancer cells with invasive potential</h3>
+            <p class="authors">Diogo Fróis Vieira, Maria Sofia Fernandes, Joana Figueiredo, Soraia Melo, Ana Margarida Moreira, José Carlos Machado, Raquel Seruca, João Miguel Sanches</p>
+            <p class="venue"><span class="label">Journal:</span> Scientific Reports (Nature)</p>
+          </article>
+        </li>
+
+        <li class="tl-item" data-cat="journal">
+          <article class="tl-card">
+            <h3>Ultrasound Despeckling with GANs and Cross Modality Transfer Learning</h3>
+            <p class="authors">Diogo Fróis Vieira, Afonso Raposo, António Azeitona, Maruya Afonso, Luís Mendes Pedro, João Sanches</p>
+            <p class="venue"><span class="label">Journal:</span> IEEE Access</p>
+          </article>
+        </li>
+
+        <li class="tl-item" data-cat="oral academic">
+          <article class="tl-card">
+            <h3>A computational approach for cytoskeletal organization characterization</h3>
+            <p class="authors">Conference: SPAOM 2023 Congress</p>
+          </article>
+        </li>
+
+        <li class="tl-item" data-cat="poster academic">
+          <article class="tl-card">
+            <h3>Unraveling new strategies for early detection of invasive cancer cells: A special focus on the nuclear and cytoskeletal architecture</h3>
+            <p class="authors">Conference: AACR 2023 Congress</p>
+          </article>
+        </li>
+
+        <!-- Add more <li class="tl-item" data-cat="..."> as needed -->
+      </ol>
     </main>
   </div>
 
   <script>
+    // Mark active item in side nav
     const page = (location.pathname.split('/').pop() || 'about.html').toLowerCase();
     document.querySelectorAll('.side-nav a[href]').forEach(a=>{
-      if(a.getAttribute('href').toLowerCase() === page) a.classList.add('active');
+      if (a.getAttribute('href').toLowerCase() === page) a.classList.add('active');
     });
+
+    // Timeline filter logic
+    const selected = new Set(['academic','oral','poster','journal']);
+    const chips = document.querySelectorAll('.chip');
+    const items = [...document.querySelectorAll('.tl-item')];
+
+    function applyFilter() {
+      // If nothing selected, show all
+      const showAll = selected.size === 0;
+      items.forEach(it => {
+        const cats = (it.dataset.cat || '').split(/\s+/);
+        const match = showAll || cats.some(c => selected.has(c));
+        it.hidden = !match;
+      });
+    }
+
+    chips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.cat;
+        const on = btn.classList.toggle('is-on');
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        on ? selected.add(cat) : selected.delete(cat);
+        applyFilter();
+      });
+    });
+
+    applyFilter();
   </script>
 </body>
 </html>
