@@ -3,9 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>diogo fróis vieira - projects</title>
-  <link rel="stylesheet" href="/styles.css?v=19" />
+  <title>diogo fróis vieira — extras</title>
+  <link rel="stylesheet" href="/styles.css?v=20" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    /* Page-local helpers (keeps your global styles.css clean) */
+    .section { margin: 2.5rem 0; }
+    .section h2 { margin: 0 0 0.5rem 0; }
+    .section p.muted { margin: 0 0 1rem 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--hair);
+      border-radius: 12px;
+      padding: 14px;
+      background: #fff;
+    }
+    .card h3 { margin: 0 0 6px 0; font-size: 1.05rem; }
+    .card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+    .card figure { margin: 8px 0 10px 0; }
+    .card img, .card video {
+      width: 100%; height: auto; display: block; border-radius: 8px;
+      background: #f7f7f7;
+    }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { text-decoration: none; color: var(--text); border-bottom: 1px solid var(--accent); }
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+    .list li:last-child { border-bottom: 0; }
+    .item-title { display: inline; }
+    .item-meta { color: var(--muted); margin-left: 6px; }
+    .tag { display:inline-block; border:1px solid var(--hair); border-radius:999px; padding:2px 8px; font-size:.8rem; color:var(--muted); margin-left:6px; }
+    .anchor-nav { display:flex; gap:10px; flex-wrap:wrap; margin: .25rem 0 1.25rem; }
+    .anchor-nav a { text-decoration:none; border:1px solid var(--hair); border-radius:999px; padding:6px 10px; color:var(--text); }
+    .anchor-nav a:hover { border-color: var(--accent); }
+    .sep { color: var(--muted); margin: 0 6px; }
+    .embed { border: 1px solid var(--hair); border-radius:12px; overflow:hidden; }
+  </style>
 </head>
 <body>
   <div class="layout">
@@ -15,14 +52,170 @@
         <ul>
           <li><a href="/">about</a></li>
           <li><a href="/work/">work</a></li>
-          <li><a href="/projects/">projects</a></li>
+          <li><a href="/projects/">extras</a></li>
         </ul>
       </nav>
     </aside>
 
     <main class="content">
-      <h1>Projects</h1>
-      <p class="muted">Work in progress.</p>
+      <h1>Extras</h1>
+      <p class="muted">Side projects, certificates, awards, and a bit of music.</p>
+
+      <div class="anchor-nav">
+        <a href="#side-projects">side projects</a>
+        <a href="#certificates">certificates & training</a>
+        <a href="#awards">awards & affiliations</a>
+        <a href="#playlists">playlists</a>
+      </div>
+
+      <!-- 1) Side projects -->
+      <section class="section" id="side-projects">
+        <h2>Side projects</h2>
+        <p class="muted">Small builds and experiments. Media links optional.</p>
+
+        <div class="grid">
+          <!-- heartcam -->
+          <article class="card">
+            <h3>HeartCam</h3>
+            <div class="meta">Remote PPG heart-rate demo <span class="tag">code</span> <span class="tag">video</span></div>
+            <!-- Replace src with your thumbnail or short mp4; keep one of img/video -->
+            <figure>
+              <img src="/assets/heartcam.jpg" alt="HeartCam preview">
+              <!-- <video src="/assets/heartcam.mp4" controls></video> -->
+            </figure>
+            <div class="links">
+              <a href="https://github.com/USERNAME/heartcam" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://youtu.be/VIDEO_ID" target="_blank" rel="noopener">Video</a>
+            </div>
+          </article>
+
+          <!-- kspace -->
+          <article class="card">
+            <h3>K-Space</h3>
+            <div class="meta">MRI k-space visualizations <span class="tag">code</span> <span class="tag">image</span></div>
+            <figure>
+              <img src="/assets/kspace.jpg" alt="K-space preview">
+            </figure>
+            <div class="links">
+              <a href="https://github.com/USERNAME/kspace" target="_blank" rel="noopener">GitHub</a>
+              <a href="/assets/kspace_demo.png" target="_blank" rel="noopener">Image</a>
+            </div>
+          </article>
+
+          <!-- cardiomyocytes -->
+          <article class="card">
+            <h3>Cardiomyocytes</h3>
+            <div class="meta">Fluorescence analysis sketches <span class="tag">image</span></div>
+            <figure>
+              <img src="/assets/cardiomyocytes.jpg" alt="Cardiomyocytes preview">
+            </figure>
+            <div class="links">
+              <a href="https://github.com/USERNAME/cardiomyocytes" target="_blank" rel="noopener">GitHub</a>
+              <a href="/assets/cardiomyocytes.png" target="_blank" rel="noopener">Image</a>
+            </div>
+          </article>
+
+          <!-- ocarina -->
+          <article class="card">
+            <h3>3D-Printed Ocarina</h3>
+            <div class="meta">Parametric STL + print notes <span class="tag">maker</span></div>
+            <figure>
+              <img src="/assets/ocarina.jpg" alt="Ocarina preview">
+            </figure>
+            <div class="links">
+              <a href="https://github.com/USERNAME/ocarina" target="_blank" rel="noopener">GitHub</a>
+              <a href="/assets/ocarina_photo.jpg" target="_blank" rel="noopener">Image</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2) Certificates & training -->
+      <section class="section" id="certificates">
+        <h2>Certificates & training</h2>
+        <p class="muted">Selected courses and short programs (PDF links).</p>
+        <ul class="list">
+          <!-- Post-grads -->
+          <li>
+            <span class="item-title"><a href="/pdfs/postgrad_deep-learning.pdf" target="_blank" rel="noopener">Post-graduate: Deep Learning</a></span>
+            <span class="item-meta"><span class="sep">·</span> IST <span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/postgrad_scientific-methods_IST.pdf" target="_blank" rel="noopener">Scientific Methodologies #1</a></span>
+            <span class="item-meta"><span class="sep">·</span> IST <span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/postgrad_scientific-methods_UCoimbra.pdf" target="_blank" rel="noopener">Scientific Methodologies #2</a></span>
+            <span class="item-meta"><span class="sep">·</span> U. Coimbra <span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+
+          <!-- Language & BLS -->
+          <li>
+            <span class="item-title"><a href="/pdfs/german_A1.1.pdf" target="_blank" rel="noopener">German A1.1</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/basic_life_support.pdf" target="_blank" rel="noopener">Basic Life Support</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+
+          <!-- Online courses (add 11) -->
+          <li>
+            <span class="item-title"><a href="/pdfs/online_course_01.pdf" target="_blank" rel="noopener">[Online Course] Title 01</a></span>
+            <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/online_course_02.pdf" target="_blank" rel="noopener">[Online Course] Title 02</a></span>
+            <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <!-- …repeat until 11 courses -->
+        </ul>
+      </section>
+
+      <!-- 3) Awards & affiliations -->
+      <section class="section" id="awards">
+        <h2>Awards & affiliations</h2>
+        <p class="muted">Short list with documents where applicable.</p>
+        <ul class="list">
+          <li>
+            <span class="item-title"><a href="/pdfs/award_01.pdf" target="_blank" rel="noopener">Academic Award #1</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/award_02.pdf" target="_blank" rel="noopener">Academic Award #2</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/award_03.pdf" target="_blank" rel="noopener">Academic Award #3</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <!-- Optional 4th -->
+          <li>
+            <span class="item-title"><a href="/pdfs/neb_membership.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
+            <span class="item-meta"><span class="sep">·</span> affiliation</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4) Playlists -->
+      <section class="section" id="playlists">
+        <h2>Playlists</h2>
+        <p class="muted">A few Spotify picks.</p>
+        <div class="grid">
+          <!-- Replace PLAYLIST_ID with your ID (open.spotify.com/playlist/PLAYLIST_ID) -->
+          <div class="card embed">
+            <iframe style="border:0; width:100%; height:352px"
+              src="https://open.spotify.com/embed/playlist/PLAYLIST_ID_1"
+              frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="card embed">
+            <iframe style="border:0; width:100%; height:352px"
+              src="https://open.spotify.com/embed/playlist/PLAYLIST_ID_2"
+              frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <!-- Add more as needed -->
+        </div>
+      </section>
     </main>
   </div>
 
@@ -30,7 +223,7 @@
     // Normalize /index.html → /
     const path = location.pathname.replace(/\/index\.html$/, '/');
     document.querySelectorAll('.side-nav a[href]').forEach(a => {
-      const href = a.getAttribute('href');        // '/', '/work/', '/projects/'
+      const href = a.getAttribute('href'); // '/', '/work/', '/projects/'
       const isActive = href === '/' ? path === '/' : path.startsWith(href);
       if (isActive) a.classList.add('active');
     });
