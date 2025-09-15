@@ -4,18 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogo fróis vieira — extras</title>
-  <link rel="stylesheet" href="/styles.css?v=22" />
+  <link rel="stylesheet" href="/styles.css?v=23" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     /* Page-local helpers */
     .section { margin: 2.5rem 0; }
     .section h2 {
       margin: 0 0 0.5rem 0;
-      font-size: clamp(1.4rem, 2.2vw, 2rem); /* responsive */
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
       line-height: 1.15;
       font-weight: 300;
+      color: var(--accent);              /* headings in orange */
     }
     .section p.muted { margin: 0 0 1rem 0; }
+
+    /* Make content links black, no underline; hover = accent */
+    .content a { color: var(--text); text-decoration: none; }
+    .content a:hover { color: var(--accent); text-decoration: none; }
+    .content a:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -34,7 +41,8 @@
       width: 100%; height: auto; display: block; border-radius: 8px; background: #f7f7f7;
     }
     .links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .links a { text-decoration: none; color: var(--text); border-bottom: 1px solid var(--accent); }
+    .links a { border-bottom: 0; }       /* no faux underline in project cards */
+
     .list { list-style: none; padding: 0; margin: 0; }
     .list li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
     .list li:last-child { border-bottom: 0; }
@@ -42,7 +50,7 @@
     .item-meta { color: var(--muted); margin-left: 6px; }
     .tag { display:inline-block; border:1px solid var(--hair); border-radius:999px; padding:2px 8px; font-size:.8rem; color:var(--muted); margin-left:6px; }
     .anchor-nav { display:flex; gap:10px; flex-wrap:wrap; margin: .25rem 0 1.25rem; }
-    .anchor-nav a { text-decoration:none; border:1px solid var(--hair); border-radius:999px; padding:6px 10px; color:var(--text); }
+    .anchor-nav a { border:1px solid var(--hair); border-radius:999px; padding:6px 10px; }
     .anchor-nav a:hover { border-color: var(--accent); }
     .sep { color: var(--muted); margin: 0 6px; }
     .embed { border: 1px solid var(--hair); border-radius:12px; overflow:hidden; }
@@ -165,11 +173,16 @@
         <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/postgrad_deep-learning.pdf" target="_blank" rel="noopener">Deep Learning</a></span>
-            <span class="item-meta"><span class="sep">·</span> IST <span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-meta">
+              <span class="sep">·</span> Técnico+ Advanced Training
+              <span class="sep">·</span> 25 h
+              <span class="sep">·</span> grade 20/20
+              <span class="sep">·</span> <time datetime="2024-07-06">6 July 2024</time>
+            </span>
           </li>
         </ul>
 
-        <!-- MOOCs (translated to English, newest first) -->
+        <!-- MOOCs (newest first) -->
         <h3 class="sub">MOOCs</h3>
         <ul class="list">
           <li><span class="item-title"><a href="/pdfs/mooc_data-science-kdd.pdf" target="_blank" rel="noopener">Data Science: KDD Process</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2024-04-06">6 April 2024</time></span></li>
@@ -196,7 +209,29 @@
         <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/german_A1.1.pdf" target="_blank" rel="noopener">German A1.1</a></span>
-            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-meta">
+              <span class="sep">·</span> LanguageCraft
+              <span class="sep">·</span> 90 h
+              <span class="sep">·</span> exam 18.2/20
+              <span class="sep">·</span> <time datetime="2022-01-25">25 January 2022</time>
+            </span>
+          </li>
+        </ul>
+
+        <!-- Workshops -->
+        <h3 class="sub">workshops</h3>
+        <ul class="list">
+          <li>
+            <span class="item-title"><a href="#" target="_blank" rel="noopener">Portuguese Sign Language</a></span>
+            <span class="item-meta"><span class="sep">·</span> workshop</span>
+          </li>
+          <li>
+            <span class="item-title"><a href="#" target="_blank" rel="noopener">The Process Behind Consultancy — Semana da Bioengenharia 2021 (IST)</a></span>
+            <span class="item-meta"><span class="sep">·</span> 2021</span>
+          </li>
+          <li>
+            <span class="item-title"><a href="#" target="_blank" rel="noopener">C++ Workshop — HackerSchool IST</a></span>
+            <span class="item-meta"><span class="sep">·</span> 10, 14 and 17 April 2021</span>
           </li>
         </ul>
 
@@ -209,7 +244,7 @@
           </li>
           <li>
             <span class="item-title"><a href="/pdfs/nucleo_engenharia_biomedica.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
-            <span class="item-meta"><span class="sep">·</span> certificate</span>
+            <span class="item-meta"><span class="sep">·</span> certificate <span class="sep">·</span> role: Deputy Secretary of the General Assembly Board</span>
           </li>
         </ul>
       </section>
@@ -219,20 +254,19 @@
         <h2>awards</h2>
         <ul class="list">
           <li>
-            <span class="item-title"><a href="/pdfs/award_01.pdf" target="_blank" rel="noopener">Academic Award #1</a></span>
-            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-title"><a href="/pdfs/award_merit_2018_2019.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2018/2019)</a></span>
           </li>
           <li>
-            <span class="item-title"><a href="/pdfs/award_02.pdf" target="_blank" rel="noopener">Academic Award #2</a></span>
-            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-title"><a href="/pdfs/award_merit_2019_2020.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2019/2020)</a></span>
           </li>
           <li>
-            <span class="item-title"><a href="/pdfs/award_03.pdf" target="_blank" rel="noopener">Academic Award #3</a></span>
-            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-title"><a href="/pdfs/award_merit_2020_2021.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2020/2021)</a></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/award_excellence_2021_2022.pdf" target="_blank" rel="noopener">Academic Excellence Diploma (2021/2022)</a></span>
           </li>
           <li>
             <span class="item-title"><a href="/pdfs/dbe_photo_contest_winner.pdf" target="_blank" rel="noopener">DBE Photo Contest — Winner</a></span>
-            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
           </li>
         </ul>
       </section>
@@ -243,12 +277,12 @@
         <p class="muted">Most things I've done in life have a soundtrack. Here are a few:</p>
         <div class="grid">
           <div class="card embed">
-            <iframe style="border:0; width:100%; height:352px"
-              src="https://open.spotify.com/embed/playlist/PLAYLIST_ID_1"
+            <iframe style="border:0; width:100%; height:252px"
+              src="https://open.spotify.com/embed/playlist/2yjE456nT0LIivqtzHWEYb?si=OpfGhu_EQQ6WYok4LUyX3Q"
               frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
           <div class="card embed">
-            <iframe style="border:0; width:100%; height:352px"
+            <iframe style="border:0; width:100%; height:252px"
               src="https://open.spotify.com/embed/playlist/PLAYLIST_ID_2"
               frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
