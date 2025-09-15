@@ -4,10 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogojfv — Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <meta http-equiv="refresh" content="0; url=about.html">
-  <script>location.replace('about.html');</script>
+  <link rel="stylesheet" href="/styles.css?v=19" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
-<body></body>
+<body>
+  <div class="layout">
+    <aside class="side">
+      <nav class="side-nav">
+        <a class="brand" href="/"></a>
+        <ul>
+          <li><a href="/">about</a></li>
+          <li><a href="/work/">work</a></li>
+          <li><a href="/projects/">projects</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <!-- Portrait + social logos (positioned as one block) -->
+      <div class="profile-block">
+        <img class="profile-pic" src="/images/me.jpeg" alt="portrait" />
+
+        <div class="socials">
+          <a href="mailto:diogofrois@gmail.com" class="soc" aria-label="Email">
+            <img src="/logos/email.png" alt="Email">
+          </a>
+          <a href="https://scholar.google.com/citations?user=nupm4CwAAAAJ&hl=en" class="soc" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <img src="/logos/scholar.png" alt="Google Scholar">
+          </a>
+          <a href="https://github.com/diogojfv" class="soc" target="_blank" rel="noopener" aria-label="GitHub">
+            <img src="/logos/github.png" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/diogovieira16/" class="soc" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="/logos/linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.last.fm/user/dunwich16" class="soc" target="_blank" rel="noopener" aria-label="Last.fm">
+            <img src="/logos/lastfm.png" alt="Last.fm">
+          </a>
+        </div>
+      </div>
+
+      <div class="content-inner">
+        <p class="lead"><strong>A living showcase of biomedical engineering.</strong></p>
+        
+        <p> </p>
+
+        <p>In high school, I dreamt of becoming a medical doctor, saving lives, and making a difference in a hospital setting. Life had other plans.</p>
+
+        <p>I graduated (BSc &amp; MSc) in Biomedical Engineering from Instituto Superior Técnico (<a href="https://tecnico.ulisboa.pt/en/" class="link-ist" target="_blank" rel="noopener">IST</a>), specializing in imaging, biosignals, and biomedical instrumentation.</p>
+
+        <p>Side-quested alone for 6 months at Danmarks Tekniske Universitet (<a href="https://www.dtu.dk/english" class="link-dtu" target="_blank" rel="noopener">DTU</a>) in Copenhagen, Denmark, as part of the Erasmus Programme.</p>
+
+        <p>To further explore my Master’s Thesis, I received two research grants from FCT to study the role of cytoskeletons and nuclei in cancer cells at the Institute for Systems and Robotics (<a href="https://welcome.isr.tecnico.ulisboa.pt/" class="link-isr" target="_blank" rel="noopener">ISR-Lisboa</a>).</p>
+
+        <p>Fell in love with my work and was awarded a PhD fellowship from FCT to pursue my research interests at IST/ISR.</p>
+
+        <p>Along the way, I joined outreach and dissemination activities promoted by IST and ISR, contributed to teaching in the Biomedical Engineering BSc at IST, and attended several national and international meetings.</p>
+
+        <p>Right now, I’m a visiting researcher at the Wirtz / Wu Lab at Johns Hopkins University (<a href="https://www.jhu.edu/" class="link-jhu" target="_blank" rel="noopener">JHU</a>) in Baltimore, USA.</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Normalize /index.html → /
+    const path = location.pathname.replace(/\/index\.html$/, '/');
+    document.querySelectorAll('.side-nav a[href]').forEach(a => {
+      const href = a.getAttribute('href');        // '/', '/work/', '/projects/'
+      const isActive = href === '/' ? path === '/' : path.startsWith(href);
+      if (isActive) a.classList.add('active');
+    });
+  </script>
+</body>
 </html>

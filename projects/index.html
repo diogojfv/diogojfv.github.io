@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>diogo fróis vieira - projects</title>
+  <link rel="stylesheet" href="/styles.css?v=19" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <div class="layout">
+    <aside class="side">
+      <nav class="side-nav">
+        <a class="brand" href="/"></a>
+        <ul>
+          <li><a href="/">about</a></li>
+          <li><a href="/work/">work</a></li>
+          <li><a href="/projects/">projects</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1>Projects</h1>
+      <p class="muted">Work in progress.</p>
+    </main>
+  </div>
+
+  <script>
+    // Normalize /index.html → /
+    const path = location.pathname.replace(/\/index\.html$/, '/');
+    document.querySelectorAll('.side-nav a[href]').forEach(a => {
+      const href = a.getAttribute('href');        // '/', '/work/', '/projects/'
+      const isActive = href === '/' ? path === '/' : path.startsWith(href);
+      if (isActive) a.classList.add('active');
+    });
+  </script>
+</body>
+</html>

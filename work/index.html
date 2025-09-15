@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogo fróis vieira - work</title>
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="/styles.css?v=19" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
   <div class="layout">
     <aside class="side">
       <nav class="side-nav">
-        <a class="brand" href="about.html"></a>
+        <a class="brand" href="/"></a>
         <ul>
-          <li><a href="about.html">about</a></li>
-          <li><a href="work.html">work</a></li>
-          <li><a href="projects.html">projects</a></li>
+          <li><a href="/">about</a></li>
+          <li><a href="/work/">work</a></li>
+          <li><a href="/projects/">projects</a></li>
         </ul>
       </nav>
     </aside>
@@ -313,37 +313,13 @@
   </div>
 
   <script>
-    // Mark active item in side nav
-    const page = (location.pathname.split('/').pop() || 'about.html').toLowerCase();
-    document.querySelectorAll('.side-nav a[href]').forEach(a=>{
-      if (a.getAttribute('href').toLowerCase() === page) a.classList.add('active');
+    // Normalize /index.html → /
+    const path = location.pathname.replace(/\/index\.html$/, '/');
+    document.querySelectorAll('.side-nav a[href]').forEach(a => {
+      const href = a.getAttribute('href');        // '/', '/work/', '/projects/'
+      const isActive = href === '/' ? path === '/' : path.startsWith(href);
+      if (isActive) a.classList.add('active');
     });
-
-    // Timeline filter logic — three categories
-    const selected = new Set(['academic','conference','journal']);
-    const chips = document.querySelectorAll('.chip');
-    const items = [...document.querySelectorAll('.tl-item')];
-
-    function applyFilter() {
-      const showAll = selected.size === 0;
-      items.forEach(it => {
-        const cats = (it.dataset.cat || '').split(/\s+/);
-        const match = showAll || cats.some(c => selected.has(c));
-        it.hidden = !match;
-      });
-    }
-
-    chips.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const cat = btn.dataset.cat;
-        const on = btn.classList.toggle('is-on');
-        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-        on ? selected.add(cat) : selected.delete(cat);
-        applyFilter();
-      });
-    });
-
-    applyFilter();
   </script>
 </body>
 </html>
