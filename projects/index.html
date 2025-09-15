@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogo fróis vieira — extras</title>
-  <link rel="stylesheet" href="/styles.css?v=20" />
+  <link rel="stylesheet" href="/styles.css?v=21" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
-    /* Page-local helpers (keeps your global styles.css clean) */
+    /* Page-local helpers */
     .section { margin: 2.5rem 0; }
     .section h2 { margin: 0 0 0.5rem 0; }
     .section p.muted { margin: 0 0 1rem 0; }
@@ -26,8 +26,7 @@
     .card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
     .card figure { margin: 8px 0 10px 0; }
     .card img, .card video {
-      width: 100%; height: auto; display: block; border-radius: 8px;
-      background: #f7f7f7;
+      width: 100%; height: auto; display: block; border-radius: 8px; background: #f7f7f7;
     }
     .links { display: flex; gap: 10px; flex-wrap: wrap; }
     .links a { text-decoration: none; color: var(--text); border-bottom: 1px solid var(--accent); }
@@ -42,6 +41,7 @@
     .anchor-nav a:hover { border-color: var(--accent); }
     .sep { color: var(--muted); margin: 0 6px; }
     .embed { border: 1px solid var(--hair); border-radius:12px; overflow:hidden; }
+    h3.sub { margin-top: 1rem; margin-bottom: .5rem; font-size: 1rem; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -59,16 +59,17 @@
 
     <main class="content">
       <h1>Extras</h1>
-      <p class="muted">Side projects, certificates, awards, and a bit of music.</p>
+      <p class="muted">Side projects, certificates, awards, affiliations, and a bit of music.</p>
 
       <div class="anchor-nav">
         <a href="#side-projects">side projects</a>
-        <a href="#certificates">certificates & training</a>
-        <a href="#awards">awards & affiliations</a>
+        <a href="#certificates">certificates</a>
+        <a href="#awards">awards</a>
+        <a href="#affiliations">affiliations</a>
         <a href="#playlists">playlists</a>
       </div>
 
-      <!-- 1) Side projects -->
+      <!-- 1) Side projects (ALL listed) -->
       <section class="section" id="side-projects">
         <h2>Side projects</h2>
         <p class="muted">Small builds and experiments. Media links optional.</p>
@@ -78,7 +79,6 @@
           <article class="card">
             <h3>HeartCam</h3>
             <div class="meta">Remote PPG heart-rate demo <span class="tag">code</span> <span class="tag">video</span></div>
-            <!-- Replace src with your thumbnail or short mp4; keep one of img/video -->
             <figure>
               <img src="/assets/heartcam.jpg" alt="HeartCam preview">
               <!-- <video src="/assets/heartcam.mp4" controls></video> -->
@@ -115,7 +115,7 @@
             </div>
           </article>
 
-          <!-- ocarina -->
+          <!-- 3D printed ocarina -->
           <article class="card">
             <h3>3D-Printed Ocarina</h3>
             <div class="meta">Parametric STL + print notes <span class="tag">maker</span></div>
@@ -127,15 +127,30 @@
               <a href="/assets/ocarina_photo.jpg" target="_blank" rel="noopener">Image</a>
             </div>
           </article>
+
+          <!-- Skin disease benign vs. malign detection -->
+          <article class="card">
+            <h3>Skin disease: Benign vs. Malign Detection</h3>
+            <div class="meta">Classification prototype <span class="tag">code</span> <span class="tag">image</span></div>
+            <figure>
+              <img src="/assets/skin_lesion.jpg" alt="Skin lesion classifier preview">
+            </figure>
+            <div class="links">
+              <a href="https://github.com/USERNAME/skin-benign-malign" target="_blank" rel="noopener">GitHub</a>
+              <a href="/assets/skin_confmat.png" target="_blank" rel="noopener">Image</a>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- 2) Certificates & training -->
+      <!-- 2) Certificates (split EXACTLY as requested, plus Post-graduations kept) -->
       <section class="section" id="certificates">
-        <h2>Certificates & training</h2>
-        <p class="muted">Selected courses and short programs (PDF links).</p>
+        <h2>Certificates</h2>
+        <p class="muted">PDF links where available.</p>
+
+        <!-- Post-graduations (kept so nothing is lost) -->
+        <h3 class="sub">Post-graduations</h3>
         <ul class="list">
-          <!-- Post-grads -->
           <li>
             <span class="item-title"><a href="/pdfs/postgrad_deep-learning.pdf" target="_blank" rel="noopener">Post-graduate: Deep Learning</a></span>
             <span class="item-meta"><span class="sep">·</span> IST <span class="sep">·</span> <time>YYYY</time></span>
@@ -148,34 +163,50 @@
             <span class="item-title"><a href="/pdfs/postgrad_scientific-methods_UCoimbra.pdf" target="_blank" rel="noopener">Scientific Methodologies #2</a></span>
             <span class="item-meta"><span class="sep">·</span> U. Coimbra <span class="sep">·</span> <time>YYYY</time></span>
           </li>
+        </ul>
 
-          <!-- Language & BLS -->
+        <!-- MOOCs (11 items) -->
+        <h3 class="sub">MOOCs</h3>
+        <ul class="list">
+          <li><span class="item-title"><a href="/pdfs/online_course_01.pdf" target="_blank" rel="noopener">[MOOC] Title 01</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_02.pdf" target="_blank" rel="noopener">[MOOC] Title 02</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_03.pdf" target="_blank" rel="noopener">[MOOC] Title 03</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_04.pdf" target="_blank" rel="noopener">[MOOC] Title 04</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_05.pdf" target="_blank" rel="noopener">[MOOC] Title 05</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_06.pdf" target="_blank" rel="noopener">[MOOC] Title 06</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_07.pdf" target="_blank" rel="noopener">[MOOC] Title 07</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_08.pdf" target="_blank" rel="noopener">[MOOC] Title 08</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_09.pdf" target="_blank" rel="noopener">[MOOC] Title 09</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_10.pdf" target="_blank" rel="noopener">[MOOC] Title 10</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/online_course_11.pdf" target="_blank" rel="noopener">[MOOC] Title 11</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+        </ul>
+
+        <!-- Languages -->
+        <h3 class="sub">Languages</h3>
+        <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/german_A1.1.pdf" target="_blank" rel="noopener">German A1.1</a></span>
             <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
           </li>
+        </ul>
+
+        <!-- Others (BLS + Núcleo EXACTLY here) -->
+        <h3 class="sub">Others</h3>
+        <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/basic_life_support.pdf" target="_blank" rel="noopener">Basic Life Support</a></span>
             <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
           </li>
-
-          <!-- Online courses (add 11) -->
           <li>
-            <span class="item-title"><a href="/pdfs/online_course_01.pdf" target="_blank" rel="noopener">[Online Course] Title 01</a></span>
-            <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-title"><a href="/pdfs/nucleo_engenharia_biomedica.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
+            <span class="item-meta"><span class="sep">·</span> certificate</span>
           </li>
-          <li>
-            <span class="item-title"><a href="/pdfs/online_course_02.pdf" target="_blank" rel="noopener">[Online Course] Title 02</a></span>
-            <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span>
-          </li>
-          <!-- …repeat until 11 courses -->
         </ul>
       </section>
 
-      <!-- 3) Awards & affiliations -->
+      <!-- 3) Awards (separate from affiliations, includes DBE photo contest winner) -->
       <section class="section" id="awards">
-        <h2>Awards & affiliations</h2>
-        <p class="muted">Short list with documents where applicable.</p>
+        <h2>Awards</h2>
         <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/award_01.pdf" target="_blank" rel="noopener">Academic Award #1</a></span>
@@ -189,20 +220,32 @@
             <span class="item-title"><a href="/pdfs/award_03.pdf" target="_blank" rel="noopener">Academic Award #3</a></span>
             <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
           </li>
-          <!-- Optional 4th -->
           <li>
-            <span class="item-title"><a href="/pdfs/neb_membership.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
-            <span class="item-meta"><span class="sep">·</span> affiliation</span>
+            <span class="item-title"><a href="/pdfs/dbe_photo_contest_winner.pdf" target="_blank" rel="noopener">DBE Photo Contest — Winner</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
           </li>
         </ul>
       </section>
 
-      <!-- 4) Playlists -->
+      <!-- 4) Affiliations (separate section; add items later) -->
+      <section class="section" id="affiliations">
+        <h2>Affiliations</h2>
+        <p class="muted">To be added.</p>
+        <!-- Example:
+        <ul class="list">
+          <li>
+            <span class="item-title"><a href="/pdfs/affiliation_01.pdf" target="_blank" rel="noopener">Affiliation #1</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY–YYYY</time></span>
+          </li>
+        </ul>
+        -->
+      </section>
+
+      <!-- 5) Playlists -->
       <section class="section" id="playlists">
         <h2>Playlists</h2>
         <p class="muted">A few Spotify picks.</p>
         <div class="grid">
-          <!-- Replace PLAYLIST_ID with your ID (open.spotify.com/playlist/PLAYLIST_ID) -->
           <div class="card embed">
             <iframe style="border:0; width:100%; height:352px"
               src="https://open.spotify.com/embed/playlist/PLAYLIST_ID_1"
@@ -213,7 +256,6 @@
               src="https://open.spotify.com/embed/playlist/PLAYLIST_ID_2"
               frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
-          <!-- Add more as needed -->
         </div>
       </section>
     </main>
