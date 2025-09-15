@@ -4,12 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogo fróis vieira — extras</title>
-  <link rel="stylesheet" href="/styles.css?v=21" />
+  <link rel="stylesheet" href="/styles.css?v=22" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     /* Page-local helpers */
     .section { margin: 2.5rem 0; }
-    .section h2 { margin: 0 0 0.5rem 0; }
+    .section h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: clamp(1.4rem, 2.2vw, 2rem); /* responsive */
+      line-height: 1.15;
+      font-weight: 300;
+    }
     .section p.muted { margin: 0 0 1rem 0; }
     .grid {
       display: grid;
@@ -58,20 +63,16 @@
     </aside>
 
     <main class="content">
-      
-      
       <div class="anchor-nav">
         <a href="#side-projects">side projects</a>
         <a href="#certificates">certificates</a>
         <a href="#awards">awards</a>
-
         <a href="#playlists">playlists</a>
       </div>
 
-      <!-- 1) Side projects (ALL listed) -->
+      <!-- 1) Side projects -->
       <section class="section" id="side-projects">
         <h2>side projects</h2>
-        
 
         <div class="grid">
           <!-- heartcam -->
@@ -142,45 +143,52 @@
         </div>
       </section>
 
-      <!-- 2) Certificates (split EXACTLY as requested, plus Post-graduations kept) -->
+      <!-- 2) Certificates -->
       <section class="section" id="certificates">
         <h2>certificates</h2>
-        
 
-        <!-- Post-graduations (kept so nothing is lost) -->
-        <h3 class="sub">post-graduations</h3>
+        <!-- Non-degree courses (curso não conferente a grau académico) -->
+        <h3 class="sub">non-degree courses</h3>
         <ul class="list">
-
           <li>
-            <span class="item-title"><a href="/pdfs/postgrad_scientific-methods_IST.pdf" target="_blank" rel="noopener">Scientific Methodologies #1</a></span>
-            <span class="item-meta"><span class="sep">·</span> IST <span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-title"><a href="/pdfs/nondegree_scientific-methodologies_IST.pdf" target="_blank" rel="noopener">Methodologies and Techniques of Scientific Research</a></span>
+            <span class="item-meta"><span class="sep">·</span> IST — grade 20/20 <span class="sep">·</span> <time datetime="2024-10-09">9 October 2024</time> <span class="sep">·</span> Lisbon</span>
           </li>
           <li>
-            <span class="item-title"><a href="/pdfs/postgrad_scientific-methods_UCoimbra.pdf" target="_blank" rel="noopener">Scientific Methodologies #2</a></span>
-            <span class="item-meta"><span class="sep">·</span> U. Coimbra <span class="sep">·</span> <time>YYYY</time></span>
+            <span class="item-title"><a href="/pdfs/nondegree_scientific-methodologies_UCoimbra.pdf" target="_blank" rel="noopener">Training Course — Scientific Research Methodologies</a></span>
+            <span class="item-meta"><span class="sep">·</span> University of Coimbra <span class="sep">·</span> <time>YYYY</time></span>
           </li>
         </ul>
-        
+
+        <!-- Specialization courses -->
         <h3 class="sub">specialization courses</h3>
+        <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/postgrad_deep-learning.pdf" target="_blank" rel="noopener">Deep Learning</a></span>
             <span class="item-meta"><span class="sep">·</span> IST <span class="sep">·</span> <time>YYYY</time></span>
           </li>
+        </ul>
 
-        <!-- MOOCs (11 items) -->
+        <!-- MOOCs (translated to English, newest first) -->
         <h3 class="sub">MOOCs</h3>
         <ul class="list">
-          <li><span class="item-title"><a href="/pdfs/online_course_01.pdf" target="_blank" rel="noopener">[MOOC] Title 01</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_02.pdf" target="_blank" rel="noopener">[MOOC] Title 02</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_03.pdf" target="_blank" rel="noopener">[MOOC] Title 03</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_04.pdf" target="_blank" rel="noopener">[MOOC] Title 04</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_05.pdf" target="_blank" rel="noopener">[MOOC] Title 05</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_06.pdf" target="_blank" rel="noopener">[MOOC] Title 06</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_07.pdf" target="_blank" rel="noopener">[MOOC] Title 07</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_08.pdf" target="_blank" rel="noopener">[MOOC] Title 08</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_09.pdf" target="_blank" rel="noopener">[MOOC] Title 09</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_10.pdf" target="_blank" rel="noopener">[MOOC] Title 10</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
-          <li><span class="item-title"><a href="/pdfs/online_course_11.pdf" target="_blank" rel="noopener">[MOOC] Title 11</a></span> <span class="item-meta"><span class="sep">·</span> Platform <span class="sep">·</span> <time>YYYY</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_data-science-kdd.pdf" target="_blank" rel="noopener">Data Science: KDD Process</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2024-04-06">6 April 2024</time></span></li>
+
+          <li><span class="item-title"><a href="/pdfs/mooc_lamaa-neuroscience.pdf" target="_blank" rel="noopener">LaMAA: Neuroscience</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2021-10-10">10 October 2021</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_lamaa-machine-learning.pdf" target="_blank" rel="noopener">LaMAA: Machine Learning</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2021-10-02">2 October 2021</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_energy-services.pdf" target="_blank" rel="noopener">Energy Services</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2021-09-27">27 September 2021</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_epigenetics-human-health.pdf" target="_blank" rel="noopener">Epigenetics: Human Health</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2021-05-03">3 May 2021</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_dynamic-energy-budgets.pdf" target="_blank" rel="noopener">Dynamic Energy Budgets</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2021-04-23">23 April 2021</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_epigenetics-foundations.pdf" target="_blank" rel="noopener">Epigenetics: Foundations</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2021-03-08">8 March 2021</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_optimal-stopping-problems.pdf" target="_blank" rel="noopener">Optimal Stopping Problems</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2021-02-28">28 February 2021</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_quantum-internet-and-computers_tudelft.pdf" target="_blank" rel="noopener">The Quantum Internet and Quantum Computers: How Will They Change the World?</a></span> <span class="item-meta"><span class="sep">·</span> TU Delft <span class="sep">·</span> <time datetime="2021-02-15">15 February 2021</time></span></li>
+
+          <li><span class="item-title"><a href="/pdfs/mooc_experimental-physics-electromagnetism.pdf" target="_blank" rel="noopener">Experimental Physics: Electromagnetism</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2019-01-16">16 January 2019</time></span></li>
+
+          <li><span class="item-title"><a href="/pdfs/mooc_eigenvalues.pdf" target="_blank" rel="noopener">Eigenvalues</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2018-12-23">23 December 2018</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_markov-matrices.pdf" target="_blank" rel="noopener">Markov Matrices</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2018-07-26">26 July 2018</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_recognizing-frailty.pdf" target="_blank" rel="noopener">Recognizing Frailty</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2018-07-11">11 July 2018</time></span></li>
+          <li><span class="item-title"><a href="/pdfs/mooc_drone-simulation-and-control.pdf" target="_blank" rel="noopener">Drone Simulation and Control</a></span> <span class="item-meta"><span class="sep">·</span> MOOC Técnico (IST) <span class="sep">·</span> <time datetime="2018-06-11">11 June 2018</time></span></li>
         </ul>
 
         <!-- Languages -->
@@ -192,9 +200,21 @@
           </li>
         </ul>
 
+        <!-- Others (BLS + Núcleo) -->
+        <h3 class="sub">others</h3>
+        <ul class="list">
+          <li>
+            <span class="item-title"><a href="/pdfs/basic_life_support.pdf" target="_blank" rel="noopener">Basic Life Support</a></span>
+            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
+          </li>
+          <li>
+            <span class="item-title"><a href="/pdfs/nucleo_engenharia_biomedica.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
+            <span class="item-meta"><span class="sep">·</span> certificate</span>
+          </li>
+        </ul>
+      </section>
 
-
-      <!-- 3) Awards (separate from affiliations, includes DBE photo contest winner) -->
+      <!-- 3) Awards -->
       <section class="section" id="awards">
         <h2>awards</h2>
         <ul class="list">
@@ -217,24 +237,10 @@
         </ul>
       </section>
 
-        <!-- Others (BLS + Núcleo EXACTLY here) -->
-        <h3 class="sub">others</h3>
-        <ul class="list">
-          <li>
-            <span class="item-title"><a href="/pdfs/basic_life_support.pdf" target="_blank" rel="noopener">Basic Life Support</a></span>
-            <span class="item-meta"><span class="sep">·</span> <time>YYYY</time></span>
-          </li>
-          <li>
-            <span class="item-title"><a href="/pdfs/nucleo_engenharia_biomedica.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
-            <span class="item-meta"><span class="sep">·</span> certificate</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 5) Playlists -->
+      <!-- 4) Playlists -->
       <section class="section" id="playlists">
         <h2>playlists</h2>
-        <p class="muted">Most things I've done in life have a soundtrack. Here's a few</p>
+        <p class="muted">Most things I've done in life have a soundtrack. Here are a few:</p>
         <div class="grid">
           <div class="card embed">
             <iframe style="border:0; width:100%; height:352px"
