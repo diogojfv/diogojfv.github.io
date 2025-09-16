@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>diogo fróis vieira — extras</title>
-  <link rel="stylesheet" href="/styles.css?v=24" />
+  <title>diogo fróis vieira — others</title>
+  <link rel="stylesheet" href="/styles.css?v=20" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     /* Page-local helpers */
@@ -65,6 +65,12 @@
       overflow: hidden;
     }
     .card.embed iframe{ display:block; width:100%; height:252px; border:0; }
+
+    :root { --embed-h: 252px; }                 /* adjust if you want taller cards */
+    #playlists .card.embed{ height:var(--embed-h); }
+    #playlists .card.embed iframe{ height:100%; display:block; border:0; }
+    /* (optional) tighter grid math */
+    #playlists .grid{ grid-auto-rows: var(--embed-h); gap:16px; }
   </style>
 </head>
 <body>
@@ -75,7 +81,7 @@
         <ul>
           <li><a href="/">about</a></li>
           <li><a href="/work/">work</a></li>
-          <li><a href="/projects/">extras</a></li>
+          <li><a href="/others/">others</a></li>
         </ul>
       </nav>
     </aside>
@@ -136,21 +142,20 @@
 
           <!-- 3D printed ocarina -->
           <article class="card">
-            <h3>3D-Printed Ocarina</h3>
-            <div class="meta">Parametric STL + print notes <span class="tag">maker</span></div>
+            <h3>3D-Printed Playable Ocarina</h3>
+            <div class="meta">Sanded, painted and varnished <span class="tag">maker</span></div>
             <figure>
-              <img src="/assets/ocarina.jpg" alt="Ocarina preview">
+              <img src="/images/ocarina.jpg" alt="Ocarina preview">
             </figure>
             <div class="links">
-              <a href="https://github.com/USERNAME/ocarina" target="_blank" rel="noopener">GitHub</a>
-              <a href="/assets/ocarina_photo.jpg" target="_blank" rel="noopener">Image</a>
+              <a href="https://github.com/USERNAME/ocarina" target="_blank" rel="noopener">STL model</a>
             </div>
           </article>
 
           <!-- Skin disease benign vs. malign detection -->
           <article class="card">
             <h3>Skin disease: Benign vs. Malign Detection</h3>
-            <div class="meta">Classification prototype <span class="tag">code</span> <span class="tag">image</span></div>
+            <div class="meta">Fundaments of Biosignals and Biomedical Imaging - Project made for the students <span class="tag">code</span> <span class="tag">image</span></div>
             <figure>
               <img src="/assets/skin_lesion.jpg" alt="Skin lesion classifier preview">
             </figure>
@@ -249,7 +254,7 @@
         <ul class="list">
           <li>
             <span class="item-title"><a href="#" target="_blank" rel="noopener">Portuguese Sign Language</a></span>
-            <span class="item-meta"><span class="sep">·</span> workshop</span>
+            
           </li>
           <li>
             <span class="item-title"><a href="#" target="_blank" rel="noopener">The Process Behind Consultancy — Semana da Bioengenharia 2021 (IST)</a></span>
@@ -266,7 +271,7 @@
         <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/basic_life_support.pdf" target="_blank" rel="noopener">Basic Life Support</a></span>
-            <span class="item-meta"><span class="sep">·</span> <time datetime="2025-02-08">8 February 2025</time></span>
+            <span class="item-meta"><span class="sep">·</span> Bombeiros Voluntários da Parede <span class="item-meta"><span class="sep">·</span> <time datetime="2025-02-08">8 February 2025</time></span>
           </li>
           <li>
             <span class="item-title"><a href="/pdfs/nucleo_engenharia_biomedica.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
@@ -326,6 +331,15 @@
             </span>
           </li>
           <li>
+            <span class="item-title">Gantt Meredith</span>
+            <span class="item-meta">
+              <span class="sep">·</span> Biomedical Engineering PhD Thesis
+              <span class="sep">·</span> <time datetime="2025-09">September 2025</time>
+              <span class="sep">·</span> The School of Engineering and Applied Science, The George Washington University
+              <span class="sep">·</span> Theranostic Pancreatic Ultrasound in Pediatric Clinical Medicine: A Focus on the Diabetic Pancreas via Multiphysics Modeling and Machine Learning Imaging Classification
+            </span>
+          </li>
+          <li>
             <span class="item-title">Inês Arana</span>
             <span class="item-meta">
               <span class="sep">·</span> Biomedical Engineering MSc Thesis, IST
@@ -349,15 +363,7 @@
               <span class="sep">·</span> A deep learning approach for Poissonian noise image denoising and decomposition
             </span>
           </li>
-          <li>
-            <span class="item-title">Gantt Meredith</span>
-            <span class="item-meta">
-              <span class="sep">·</span> Biomedical Engineering PhD Thesis
-              <span class="sep">·</span> <time datetime="2025-09">September 2025</time>
-              <span class="sep">·</span> The School of Engineering and Applied Science, The George Washington University
-              <span class="sep">·</span> Theranostic Pancreatic Ultrasound in Pediatric Clinical Medicine: A Focus on the Diabetic Pancreas via Multiphysics Modeling and Machine Learning Imaging Classification
-            </span>
-          </li>
+          
         </ul>
       </section>
 
@@ -366,6 +372,13 @@
         <h2>playlists</h2>
         <p class="muted">Most things I've done in life have a soundtrack. Here are a few:</p>
         <div class="grid">
+          <div class="card embed">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/4GPFsRZmVpdLp971er4Wqq?si=7bca6158e82a41fc"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+
           <div class="card embed">
             <iframe
               src="https://open.spotify.com/embed/playlist/2yjE456nT0LIivqtzHWEYb?si=OpfGhu_EQQ6WYok4LUyX3Q"
@@ -387,6 +400,42 @@
           <div class="card embed">
             <iframe
               src="https://open.spotify.com/embed/playlist/4xSIB0EvCaYY3lW0DzT9Ut?si=11a853a24aa14ee0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="card embed">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/5tDoo9hOcVxkcXp9dr5QDB?si=a80159b4694c412c"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="card embed">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/0rbTeTRLIQHup1WskdYLuu?si=a6b9800ad0c04c57"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="card embed">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/1QAIDaL1Lxn0XyoMOwiMKA?si=c2f7e3bd7b5b4820"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="card embed">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/5mBQkhs8I2QHCFIgPepKc4?si=dd3e192c1a36475d"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="card embed">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/4W0uwhTAMbkxFf2ikAR1JV?si=f838ea4acce94f22"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="card embed">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/1QAIDaL1Lxn0XyoMOwiMKA?si=0f2bddd572ca48d3"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
