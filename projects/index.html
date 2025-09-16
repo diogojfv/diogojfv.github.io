@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogo fróis vieira — others</title>
-  <link rel="stylesheet" href="/styles.css?v=20" />
+  <link rel="stylesheet" href="/styles.css?v=21" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     /* Page-local helpers */
@@ -14,11 +14,11 @@
       font-size: clamp(1.4rem, 2.2vw, 2rem);
       line-height: 1.15;
       font-weight: 300;
-      color: var(--accent);              /* headings in orange */
+      color: var(--accent);
     }
     .section p.muted { margin: 0 0 1rem 0; }
 
-    /* Make content links black, no underline; hover = accent */
+    /* Links: black, hover = accent */
     .content a { color: var(--text); text-decoration: none; }
     .content a:hover { color: var(--accent); text-decoration: none; }
     .content a:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; }
@@ -41,7 +41,7 @@
       width: 100%; height: auto; display: block; border-radius: 8px; background: #f7f7f7;
     }
     .links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .links a { border-bottom: 0; }       /* no faux underline in project cards */
+    .links a { border-bottom: 0; }
 
     .list { list-style: none; padding: 0; margin: 0; }
     .list li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
@@ -56,7 +56,7 @@
     .embed { border: 1px solid var(--hair); border-radius:12px; overflow:hidden; }
     h3.sub { margin-top: 1rem; margin-bottom: .5rem; font-size: 1rem; color: var(--muted); }
 
-    /* --- Fix playlist "outer box" --- */
+    /* Remove white frame around Spotify embeds */
     .card.embed{
       padding: 0;
       border: 0;
@@ -66,10 +66,10 @@
     }
     .card.embed iframe{ display:block; width:100%; height:252px; border:0; }
 
-    :root { --embed-h: 252px; }                 /* adjust if you want taller cards */
+    /* Fix grid row offset for embeds */
+    :root { --embed-h: 252px; }
     #playlists .card.embed{ height:var(--embed-h); }
     #playlists .card.embed iframe{ height:100%; display:block; border:0; }
-    /* (optional) tighter grid math */
     #playlists .grid{ grid-auto-rows: var(--embed-h); gap:16px; }
   </style>
 </head>
@@ -92,6 +92,7 @@
         <a href="#certificates">certificates</a>
         <a href="#awards">awards</a>
         <a href="#supervision">supervision</a>
+        <a href="#volunteering">volunteering</a>
         <a href="#playlists">playlists</a>
       </div>
 
@@ -155,7 +156,7 @@
           <!-- Skin disease benign vs. malign detection -->
           <article class="card">
             <h3>Skin disease: Benign vs. Malign Detection</h3>
-            <div class="meta">Fundaments of Biosignals and Biomedical Imaging - Project made for the students <span class="tag">code</span> <span class="tag">image</span></div>
+            <div class="meta">Fundaments of Biosignals and Biomedical Imaging — project made for the students <span class="tag">code</span> <span class="tag">image</span></div>
             <figure>
               <img src="/assets/skin_lesion.jpg" alt="Skin lesion classifier preview">
             </figure>
@@ -171,7 +172,7 @@
       <section class="section" id="certificates">
         <h2>certificates</h2>
 
-        <!-- Non-degree courses (curso não conferente a grau académico) -->
+        <!-- Non-degree courses -->
         <h3 class="sub">non-degree 1-year courses</h3>
         <ul class="list">
           <li>
@@ -254,7 +255,7 @@
         <ul class="list">
           <li>
             <span class="item-title"><a href="#" target="_blank" rel="noopener">Portuguese Sign Language</a></span>
-            
+            <span class="item-meta"><span class="sep">·</span> workshop</span>
           </li>
           <li>
             <span class="item-title"><a href="#" target="_blank" rel="noopener">The Process Behind Consultancy — Semana da Bioengenharia 2021 (IST)</a></span>
@@ -271,7 +272,10 @@
         <ul class="list">
           <li>
             <span class="item-title"><a href="/pdfs/basic_life_support.pdf" target="_blank" rel="noopener">Basic Life Support</a></span>
-            <span class="item-meta"><span class="sep">·</span> Bombeiros Voluntários da Parede <span class="item-meta"><span class="sep">·</span> <time datetime="2025-02-08">8 February 2025</time></span>
+            <span class="item-meta">
+              <span class="sep">·</span> Bombeiros Voluntários da Parede
+              <span class="sep">·</span> <time datetime="2025-02-08">8 February 2025</time>
+            </span>
           </li>
           <li>
             <span class="item-title"><a href="/pdfs/nucleo_engenharia_biomedica.pdf" target="_blank" rel="noopener">Núcleo de Engenharia Biomédica</a></span>
@@ -285,21 +289,29 @@
         <h2>awards</h2>
         <ul class="list">
           <li>
-            <span class="item-title"><a href="/pdfs/award_merit_2018_2019.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2018/2019)</a></span>
+            <span class="item-title"><a href="/pdfs/award_merit_2018_2019.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2018/2019)</a></span> <span class="sep">·</span> 2nd-year BSc
           </li>
           <li>
-            <span class="item-title"><a href="/pdfs/award_merit_2019_2020.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2019/2020)</a></span>
+            <span class="item-title"><a href="/pdfs/award_merit_2019_2020.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2019/2020)</a></span> <span class="sep">·</span> 3rd-year BSc
           </li>
           <li>
-            <span class="item-title"><a href="/pdfs/award_merit_2020_2021.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2020/2021)</a></span>
+            <span class="item-title"><a href="/pdfs/award_merit_2020_2021.pdf" target="_blank" rel="noopener">Academic Merit Diploma (2020/2021)</a></span> <span class="sep">·</span> 1st-year MSc
           </li>
           <li>
-            <span class="item-title"><a href="/pdfs/award_excellence_2021_2022.pdf" target="_blank" rel="noopener">Academic Excellence Diploma (2021/2022)</a></span>
+            <span class="item-title"><a href="/pdfs/award_excellence_2021_2022.pdf" target="_blank" rel="noopener">Academic Excellence Diploma (2021/2022)</a></span> <span class="sep">·</span> 2nd-year MSc
           </li>
           <li>
             <span class="item-title"><a href="/pdfs/dbe_photo_contest_winner.pdf" target="_blank" rel="noopener">DBE Photo Contest 2022 — Winner</a></span>
           </li>
         </ul>
+
+        <article class="card" style="margin-top:1rem;">
+          <h3>DBE Photo Contest 2022 — winning image</h3>
+          <div class="meta">CHO cell with stained alpha-tubulin (red, microtubules) and nuclei (blue, DAPI). The green skeleton represents microtubule centrelines extracted with my software.</div>
+          <figure>
+            <img src="/images/cho.jpg" alt="CHO cell — DBE Photo Contest winning image">
+          </figure>
+        </article>
       </section>
 
       <!-- 4) Supervision -->
@@ -363,11 +375,31 @@
               <span class="sep">·</span> A deep learning approach for Poissonian noise image denoising and decomposition
             </span>
           </li>
-          
         </ul>
       </section>
 
-      <!-- 5) Playlists -->
+      <!-- 5) Volunteering -->
+      <section class="section" id="volunteering">
+        <h2>volunteering</h2>
+        <ul class="list">
+          <li>
+            <span class="item-title">Mentor</span>
+            <span class="item-meta">
+              <span class="sep">·</span> <time datetime="2018-09">September 2018</time>
+              <span class="sep">·</span> Mentoring Programme by NAPE-IST (Núcleo de Apoio ao Estudante do Instituto Superior Técnico) aiming for a better integration of newly arrived college students.
+            </span>
+          </li>
+          <li>
+            <span class="item-title">Advertising Assistant</span>
+            <span class="item-meta">
+              <span class="sep">·</span> <time datetime="2022-07">July 2022</time>
+              <span class="sep">·</span> Advertising of Nevaro’s “Holi” mobile app, within the scope of Festa da Saúde (Health Festival) held in Aveiro, Portugal, promoting healthy habits of mental health, wellbeing and performance.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 6) Playlists -->
       <section class="section" id="playlists">
         <h2>playlists</h2>
         <p class="muted">Most things I've done in life have a soundtrack. Here are a few:</p>
@@ -433,13 +465,7 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
-          <div class="card embed">
-            <iframe
-              src="https://open.spotify.com/embed/playlist/1QAIDaL1Lxn0XyoMOwiMKA?si=0f2bddd572ca48d3"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </div>
-
+        </div>
       </section>
     </main>
   </div>
@@ -448,7 +474,7 @@
     // Normalize /index.html → /
     const path = location.pathname.replace(/\/index\.html$/, '/');
     document.querySelectorAll('.side-nav a[href]').forEach(a => {
-      const href = a.getAttribute('href'); // '/', '/work/', '/projects/'
+      const href = a.getAttribute('href'); // '/', '/work/', '/others/'
       const isActive = href === '/' ? path === '/' : path.startsWith(href);
       if (isActive) a.classList.add('active');
     });
