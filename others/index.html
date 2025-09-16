@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>diogo fróis vieira — others</title>
-  <link rel="stylesheet" href="/styles.css?v=21" />
+  <link rel="stylesheet" href="/styles.css?v=22" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     /* Page-local helpers */
@@ -14,11 +14,11 @@
       font-size: clamp(1.4rem, 2.2vw, 2rem);
       line-height: 1.15;
       font-weight: 300;
-      color: var(--accent);
+      color: var(--accent);              /* headings in orange */
     }
     .section p.muted { margin: 0 0 1rem 0; }
 
-    /* Links: black, hover = accent */
+    /* Make content links black, no underline; hover = accent */
     .content a { color: var(--text); text-decoration: none; }
     .content a:hover { color: var(--accent); text-decoration: none; }
     .content a:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; }
@@ -41,7 +41,7 @@
       width: 100%; height: auto; display: block; border-radius: 8px; background: #f7f7f7;
     }
     .links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .links a { border-bottom: 0; }
+    .links a { border-bottom: 0; }       /* no faux underline in project cards */
 
     .list { list-style: none; padding: 0; margin: 0; }
     .list li { padding: 10px 0; border-bottom: 1px solid var(--rule); }
@@ -56,7 +56,7 @@
     .embed { border: 1px solid var(--hair); border-radius:12px; overflow:hidden; }
     h3.sub { margin-top: 1rem; margin-bottom: .5rem; font-size: 1rem; color: var(--muted); }
 
-    /* Remove white frame around Spotify embeds */
+    /* --- Remove white frame around Spotify embeds --- */
     .card.embed{
       padding: 0;
       border: 0;
@@ -66,7 +66,7 @@
     }
     .card.embed iframe{ display:block; width:100%; height:252px; border:0; }
 
-    /* Fix grid row offset for embeds */
+    /* --- Fix playlist row offset: uniform item height --- */
     :root { --embed-h: 252px; }
     #playlists .card.embed{ height:var(--embed-h); }
     #playlists .card.embed iframe{ height:100%; display:block; border:0; }
@@ -172,7 +172,7 @@
       <section class="section" id="certificates">
         <h2>certificates</h2>
 
-        <!-- Non-degree courses -->
+        <!-- Non-degree courses (curso não conferente a grau académico) -->
         <h3 class="sub">non-degree 1-year courses</h3>
         <ul class="list">
           <li>
@@ -305,13 +305,16 @@
           </li>
         </ul>
 
-        <article class="card" style="margin-top:1rem;">
-          <h3>DBE Photo Contest 2022 — winning image</h3>
-          <div class="meta">CHO cell with stained alpha-tubulin (red, microtubules) and nuclei (blue, DAPI). The green skeleton represents microtubule centrelines extracted with my software.</div>
-          <figure>
-            <img src="/images/cho.jpg" alt="CHO cell — DBE Photo Contest winning image">
-          </figure>
-        </article>
+        <!-- Make the DBE photo same width style as cards -->
+        <div class="grid" style="margin-top:1rem;">
+          <article class="card">
+            <h3>DBE Photo Contest 2022 — winning image</h3>
+            <div class="meta">CHO cell with stained alpha-tubulin (red, microtubules) and nuclei (blue, DAPI). The green skeleton represents microtubule centrelines extracted with my software.</div>
+            <figure>
+              <img src="/images/cho.jpg" alt="CHO cell — DBE Photo Contest winning image">
+            </figure>
+          </article>
+        </div>
       </section>
 
       <!-- 4) Supervision -->
@@ -410,7 +413,6 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
-
           <div class="card embed">
             <iframe
               src="https://open.spotify.com/embed/playlist/2yjE456nT0LIivqtzHWEYb?si=OpfGhu_EQQ6WYok4LUyX3Q"
@@ -465,7 +467,7 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
-        </div>
+        </div> <!-- CLOSE .grid to avoid big blank row -->
       </section>
     </main>
   </div>
