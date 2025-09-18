@@ -71,6 +71,18 @@
     #playlists .card.embed{ height:var(--embed-h); }
     #playlists .card.embed iframe{ height:100%; display:block; border:0; }
     #playlists .grid{ grid-auto-rows: var(--embed-h); gap:16px; }
+
+
+    /* Card tag row */
+    .card .meta .tags{
+      margin-top:.5rem;
+      display:flex;
+      gap:.5rem;
+      flex-wrap:wrap;
+    }
+    /* Reset the global left margin for badges inside cards */
+    .card .meta .tags .tag{ margin-left:0; }
+
   </style>
 </head>
 <body>
@@ -139,8 +151,11 @@
             </figure>
             <div class="meta">
               GUI that bridges backend code (see paper) to quantify the structural organization of cardiomyocytes. Made for the Stem Cell Engineering Research Group from the Institute for Bioengineering and Biosciences (iBB).
-              <p><a class="tag" href="https://doi.org/10.1016/j.cels.2021.05.001" target="_blank" rel="noopener">paper</a> <a class="tag" href="https://github.com/diogojfv/Structural-Organization-of-Cardiomyocytes" target="_blank" rel="noopener">code</a></p>
               
+              <div class="tags">
+                <a class="tag" href="https://doi.org/10.1016/j.cels.2021.05.001" target="_blank" rel="noopener">paper</a>
+                <a class="tag" href="https://github.com/diogojfv/Structural-Organization-of-Cardiomyocytes" target="_blank" rel="noopener">code</a>
+              </div>
             </div>
           </article>
 
@@ -152,7 +167,7 @@
             </figure>
             <div class="meta">
               3D-printed, sanded, painted and varnished.
-              <p><a class="tag" href="https://www.printables.com/model/65399-12-hole-playable-ocarina" target="_blank" rel="noopener">STL</a></p>
+              <a class="tag" href="https://www.printables.com/model/65399-12-hole-playable-ocarina" target="_blank" rel="noopener">STL</a>
             </div>
           </article>
 
