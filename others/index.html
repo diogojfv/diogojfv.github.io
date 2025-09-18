@@ -38,7 +38,7 @@
     .card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; text-indent: 0; }
     .card figure { margin: 8px 0 10px 0; }
     .card img, .card video {
-      width: 100%; height: auto; display: block; border-radius: 8px; background: #f7f7f7;
+      width: 100%; height: auto; display: block; border-radius: 0px; background: #f7f7f7;
     }
     .links { display: flex; gap: 10px; flex-wrap: wrap; }
     .links a { border-bottom: 0; }       /* no faux underline in project cards */
@@ -139,7 +139,10 @@
             </figure>
             <div class="meta">
               My cutest friend Sal showcases how projections build a sinogram and how the image gets reconstructed, similar to computed tomography (CT) image formation.
-              <a class="tag" href="https://github.com/diogojfv/sinogram" target="_blank" rel="noopener">code</a>
+              
+              <div class="tags">
+                <a class="tag" href="https://github.com/diogojfv/sinogram" target="_blank" rel="noopener">code</a>
+              </div>
             </div>
           </article>
 
@@ -161,13 +164,17 @@
 
           <!-- 3D printed ocarina -->
           <article class="card">
-            <h3>3D-Printed Ocarina</h3>
+            <h3>3D-Printed Playable Ocarina</h3>
             <figure>
               <img src="/images/ocarina.jpg" alt="Ocarina">
             </figure>
             <div class="meta">
               3D-printed, sanded, painted and varnished.
-              <a class="tag" href="https://www.printables.com/model/65399-12-hole-playable-ocarina" target="_blank" rel="noopener">STL</a>
+              
+              <div class="tags">  
+                  <a class="tag" href="https://www.printables.com/model/65399-12-hole-playable-ocarina" target="_blank" rel="noopener">STL</a>
+              </div>
+              
             </div>
           </article>
 
