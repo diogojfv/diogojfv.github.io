@@ -57,7 +57,7 @@ a:hover { opacity: 0.9; }
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 
 /* grid: left sidebar + main content */
-.layout { display: grid; grid-template-columns: 170px 1fr; min-height: 100vh; }
+.layout { display: grid; grid-template-columns: 160px 1fr; min-height: 100vh; }
 
 /* sidebar (no box) */
 .side {
@@ -153,8 +153,14 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   .content { margin: 24px 16px; padding: 0; }
   .profile-block{ position: static; width: 140px; }
   .profile-pic{ height: 140px; }
-  .socials{ width: 140px; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
-  .socials .soc img{ width: 32px; height: 32px; }
+  .socials{
+    display: grid;
+    grid-template-columns: repeat(4, 28px); /* 4 per row */
+    gap: 6px;                                /* 4*28 + 3*6 = 130px < 140px */
+    width: 140px;                            /* keep your current width */
+    justify-content: start;                  /* align left */
+  }
+  .socials .soc img{ width: 28px; height: 28px; }
   .content-inner { margin-left: 0; }
 }
 
