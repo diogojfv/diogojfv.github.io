@@ -57,7 +57,7 @@ a:hover { opacity: 0.9; }
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 
 /* grid: left sidebar + main content */
-.layout { display: grid; grid-template-columns: 210px 1fr; min-height: 100vh; }
+.layout { display: grid; grid-template-columns: 190px 1fr; min-height: 100vh; }
 
 /* sidebar (no box) */
 .side {
@@ -219,8 +219,10 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   content:"";
   position: absolute;
   top: 1.25rem;
-  left: calc(-1 * var(--gutter) - var(--dot)/2 + var(--spine)/2);
-  width: var(--dot); height: var(--dot); border-radius: 50%;
+  left: calc(-1 * var(--gutter));   /* anchor at the spine */
+  transform: translateX(-50%);     /* shift half the dot width left */
+  width: var(--dot); height: var(--dot);
+  border-radius: 50%;
   background: var(--bg);
   box-shadow: 0 0 0 2px var(--hair), inset 0 0 0 2px var(--cat);
 }
