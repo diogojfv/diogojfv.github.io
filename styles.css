@@ -112,7 +112,7 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .socials{ margin-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 6px; }
 .socials .soc img{ width: 40px; height: 40px; display: block; }
 .content-inner{ margin-top: 60px; margin-left: 260px; }
-.content-inner p { margin: 0 0 16px; color: var(--text); }
+.content-inner p { margin: 0 0 25px; color: var(--text); }
 .content-inner .lead{
   font-family: 'Congenial UltraLight Italic', 'Congenial UltraLight', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-style: italic;
@@ -125,7 +125,8 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .link-dtu { color: #9A0000; }
 .link-isr { color: #AA261A; }
 .link-jhu { color: #092C72; }
-.link-ist:hover, .link-dtu:hover, .link-isr:hover, .link-jhu:hover { opacity: 0.85; }
+.link-fctuc { color: #00713D; }
+.link-ist:hover, .link-dtu:hover, .link-isr:hover, .link-jhu:hover, .link-fctuc:hover { opacity: 0.85; }
 
 /* small screens */
 @media (max-width: 720px) {
