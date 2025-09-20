@@ -239,8 +239,15 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   box-shadow: 0 1px 0 rgba(0,0,0,.02);
 }
 .tl-card h3{ margin: 0 0 .35rem; font-size: 1.05rem; font-weight: 600; }
-.tl-card .authors, .tl-card .venue{ margin: .25rem 0; color: var(--muted); font-size: .92rem; }
+.tl-card .authors, .tl-card .venue{ display:flex;  align-items:center;  gap:.35rem;  flex-wrap:wrap; margin: .25rem 0; color: var(--muted); font-size: .92rem; }
 .tl-card .label{ font-weight: 600; color: var(--text); }
+
+.tl-card .venue .tags{
+  margin-left:auto;            /* pushes tags to the right */
+  display:flex;
+  gap:.5rem;
+  white-space:nowrap;
+}
 
 /* contribution extras */
 .venue .sep{ opacity:.45; margin: 0 .35rem; }
