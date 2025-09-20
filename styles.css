@@ -222,7 +222,7 @@ h1 { font-size: 44px; margin: 0 0 8px; }
   left: calc(-1 * var(--gutter) + var(--spine) / 2);   /* anchor at the spine */
   transform: translateX(-50%);     /* shift half the dot width left */
   width: var(--dot); height: var(--dot);
-  border-radius: 50%;
+  border-radius: 45%;
   background: var(--bg);
   box-shadow: 0 0 0 2px var(--hair), inset 0 0 0 2px var(--cat);
 }
