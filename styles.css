@@ -243,8 +243,8 @@ h1 { font-size: 44px; margin: 0 0 8px; }
 .tl-card .label{ font-weight: 600; color: var(--text); }
 
 .tl-card .venue .tags{
-  margin-left:auto;            /* pushes tags to the right */
-  display:flex;
+  margin-left:0;            /* pushes tags to the right */
+  display:inline-flex;
   gap:.5rem;
   white-space:nowrap;
 }
