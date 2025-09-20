@@ -16,6 +16,15 @@
   font-display: swap;
 }
 
+/* Italic */
+@font-face {
+  font-family: 'Congenial Bold';
+  src: url('/fonts/congenial-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* === Theme tokens === */
 :root{
   --accent: #d9822b;           /* single accent used for nav-active + links */
