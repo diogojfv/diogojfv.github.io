@@ -57,7 +57,7 @@ a:hover { opacity: 0.9; }
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 
 /* grid: left sidebar + main content */
-.layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.layout { display: grid; grid-template-columns: 210px 1fr; min-height: 100vh; }
 
 /* sidebar (no box) */
 .side {
